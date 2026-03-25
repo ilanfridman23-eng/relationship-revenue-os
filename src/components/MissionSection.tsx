@@ -28,7 +28,10 @@ const MissionSection = () => {
             Every GTM framework built in the last 40 years was designed for product companies launching to strangers. Professional services firms have been borrowing those playbooks and wondering why they do not work. The Dead Zone, the 96% of every CRM that is dormant, earned, and going to waste, exists because no GTM system was built for how PS firms actually win. Through reputation. Relationships. The right message at the right moment.
           </p>
           <p className="font-sans text-text-body mt-4" style={{ fontSize: 16, lineHeight: 1.8 }}>
-            GTM for Professional Services is the first system built from scratch for this reality. Not theory. Not research from the outside. GTM for Professional Services is the first system built from scratch for this reality. Not theory. Not research from the outside. Fifty Discovery Sessions with marketing, BD leaders & managing partners who are living this problem right now. Their situations shape the chapters. The chapters become the framework. The framework changes how an entire industry grows. this problem right now. Their situations shape the chapters. The chapters become the framework. The framework changes how an entire industry grows.
+            GTM for professional services is not a plan for entering a new market. It is a system for activating the one you already own. That definition did not exist before this book. It does now.
+          </p>
+          <p className="font-sans text-text-body mt-4" style={{ fontSize: 16, lineHeight: 1.8 }}>
+            GTM for Professional Services is the first system built from scratch for this reality. Not theory. Not research from the outside. Fifty Discovery Sessions with managing partners who are living this problem right now. Their situations shape the chapters. The chapters become the framework. The framework changes how an entire industry grows.
           </p>
         </div>
 
