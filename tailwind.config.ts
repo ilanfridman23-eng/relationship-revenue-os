@@ -14,6 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        display: ["'Inter Tight'", "sans-serif"],
         serif: ["'Cormorant Garamond'", "serif"],
         sans: ["'Instrument Sans'", "sans-serif"],
         mono: ["'DM Mono'", "monospace"],
@@ -52,15 +53,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        parchment: "#FAF7F2",
-        warm: "#EDE8DF",
         ink: "#0D1117",
         gold: "#B8933A",
         sage: "#3D5A4A",
         rust: "#8B3A2A",
         slate: "#5A6A7A",
+        "surface-dark": "#131820",
+        "surface-darker": "#0D1117",
         "muted-color": "#9AAABB",
-        "border-color": "#DDD6C8",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
