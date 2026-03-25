@@ -1,39 +1,17 @@
 
 
-# 7 Content Updates to discover.mabbly.com
+# Fix Empty Space in BookSection
 
-All changes are text/content only. No layout, design, or structural changes.
+## Problem
+The BookSection shows "THE FRAMEWORK / GTM for Professional Services / The Relationship Revenue OS" at the top, then a large empty cream area. The book covers and content below (pull quote, chapter cards, timeline) are likely invisible because `scroll-reveal` elements haven't triggered, or the book cover images aren't rendering properly.
 
-## Change 1 — Hero Subhead (HeroSection.tsx, lines 71-73)
-Replace subhead text with the longer version starting with "GTM has one universally accepted definition..."
+## Root Cause
+The `scroll-reveal` class sets `opacity: 0` by default, relying on IntersectionObserver to add `.visible`. The book display, pull quote, chapter cards, and timeline all have `scroll-reveal` — if the observer doesn't fire (e.g., timing issue), everything below the heading is invisible, creating a large blank area.
 
-## Change 2 — Definition Callout Block (HeroSection.tsx, after line 146)
-Insert a new callout block between the stat strip and the right-column book display. Placed inside the left column div, after the stats grid. Styled with gold border top/bottom, semi-transparent gold background, centered text. Label in DM Mono 9px uppercase, statement in Cormorant Garamond italic 26px desktop / 20px mobile.
+## Fix
+1. **BookSection.tsx**: Remove `scroll-reveal` from the book display container (line 57) so the book covers are always visible. The book covers are the main visual anchor of this section and should not be hidden by scroll animations.
+2. Optionally reduce spacing — the `mt-12` gap between subtitle and book display could be tightened to `mt-8`.
 
-## Change 3 — Fix Duplicate Text in Mission Section (MissionSection.tsx, lines 27-32)
-Replace the two body paragraphs with three clean paragraphs:
-- P1: "Every GTM framework..." (same as current but with em-dash notation kept as the user provided)
-- P2 (new): "GTM for professional services is not a plan for entering a new market..."
-- P3: "GTM for Professional Services is the first system..." (clean, no duplicates)
-
-Note: The user's provided text uses " — " (spaced em-dashes). Per memory rules, no hyphens/dashes. Will use commas instead.
-
-## Change 4 — Pillar 01 Extra Sentence (MissionSection.tsx, line 41)
-Append "It also gives professional services GTM its first correct definition." to pillar 01 body.
-
-## Change 5 — Framework Section Subtitle (BookSection.tsx, after line 50)
-Add one line of Instrument Sans 15px text below "The Relationship Revenue OS" subtitle: "The first GTM system built for the market you already own. Not for finding strangers. For activating relationships."
-
-## Change 6 — Apply Section Italic Line (ApplySection.tsx, after line 69)
-Add italic Cormorant Garamond 16px line: "If your firm has ever wondered why every GTM playbook you have tried was built for someone else — this research session is the answer." (Will use comma instead of em-dash per memory rules.)
-
-## Change 7 — Footer Tagline (Footer.tsx, line 32)
-Replace "Signal Activated Growth for Professional Services" with "GTM for the market you already own."
-
-## Files Modified
-- `src/components/HeroSection.tsx` (changes 1, 2)
-- `src/components/MissionSection.tsx` (changes 3, 4)
-- `src/components/BookSection.tsx` (change 5)
-- `src/components/ApplySection.tsx` (change 6)
-- `src/components/Footer.tsx` (change 7)
+## File
+- `src/components/BookSection.tsx` — remove `scroll-reveal` class from the book display div (line 57), keep it on other elements.
 
