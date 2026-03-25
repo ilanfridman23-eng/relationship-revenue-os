@@ -7,7 +7,7 @@ const DeeperSection = () => {
   const articles = [
     {
       tag: "START HERE",
-      title: "The Dead Zone — What It Is, What It Costs, and Why No GTM Playbook Has Solved It",
+      title: "The Dead Zone. What It Is, What It Costs, and Why No GTM Playbook Has Solved It",
       body: "The founding premise of the book. Why every GTM framework built in the last 40 years was designed for the wrong buyer and what it costs PS firms every month they wait to fix it.",
     },
     {
