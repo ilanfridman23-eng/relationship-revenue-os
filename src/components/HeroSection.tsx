@@ -1,3 +1,5 @@
+import bookCover from "@/assets/book-cover.png";
+
 const HeroSection = () => {
   return (
     <section
