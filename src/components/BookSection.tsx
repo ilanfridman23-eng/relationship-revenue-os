@@ -50,13 +50,12 @@ const BookSection = () => {
         </p>
 
         {/* Book display */}
-        <div className="relative mx-auto mt-12 scroll-reveal" style={{ maxWidth: 520, height: 300 }}>
+        <div className="relative mx-auto mt-12 scroll-reveal max-w-[320px] sm:max-w-[520px] h-[220px] sm:h-[300px]">
           <img
             src={bookCover}
             alt="GTM for Professional Services"
-            className="absolute"
+            className="absolute w-[130px] sm:w-[180px]"
             style={{
-              width: 180,
               aspectRatio: "2/3",
               transform: "rotate(-3deg)",
               boxShadow: "0 28px 56px rgba(0,0,0,0.2)",
@@ -68,10 +67,9 @@ const BookSection = () => {
             }}
           />
           <div
-            className="absolute flex items-center justify-center"
+            className="absolute flex items-center justify-center h-[200px] sm:h-[270px]"
             style={{
               width: 26,
-              height: 270,
               background: "#B8933A",
               left: "50%",
               top: 5,
@@ -90,9 +88,8 @@ const BookSection = () => {
           <img
             src={bookCover}
             alt="GTM for Professional Services"
-            className="absolute"
+            className="absolute w-[130px] sm:w-[180px]"
             style={{
-              width: 180,
               aspectRatio: "2/3",
               transform: "rotate(3deg)",
               boxShadow: "0 28px 56px rgba(0,0,0,0.15)",
