@@ -48,10 +48,7 @@ const AuthorsSection = () => {
 
           {/* Richard */}
           <div className="bg-white border border-border-color p-10 scroll-reveal">
-            <div className="w-24 h-24 rounded-full bg-warm flex items-center justify-center mx-auto md:mx-0">
-              <span className="font-serif text-gold" style={{ fontSize: 30 }}>RA</span>
-            </div>
-            {/* Replace this circle with Richard Ashbaugh professional headshot */}
+            <img src={richardPhoto} alt="Richard Ashbaugh" className="w-24 h-24 rounded-full object-cover mx-auto md:mx-0" />
             <h3 className="font-serif font-semibold text-ink mt-4" style={{ fontSize: 28 }}>Richard Ashbaugh</h3>
             <p className="font-mono uppercase text-gold mt-1" style={{ fontSize: 9, letterSpacing: "0.14em" }}>
               CEO, Mabbly · Former CMO, AArete · Former CMO, Lotis Blue Consulting
