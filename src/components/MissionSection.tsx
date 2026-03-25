@@ -82,7 +82,7 @@ const MissionSection = () => {
           }}
         >
           <p className="font-sans text-slate" style={{ fontSize: 15, lineHeight: 1.75 }}>
-            This is the same research model Adam used for The Science of Story — 500 interviews, 100 podcast episodes, one book that changed how brands think about narrative. GTM for Professional Services applies the same method to the problem professional services firms have never had a framework to solve.
+            This is the same research model Adam used for The Science of Story. 500 interviews, 100 podcast episodes, one book that changed how brands think about narrative. GTM for Professional Services applies the same method to the problem professional services firms have never had a framework to solve.
           </p>
         </div>
       </div>
