@@ -9,32 +9,27 @@ const ResultsSection = () => {
   ];
 
   return (
-    <section style={{ background: "#0D1117" }} className="px-6 py-10 md:px-20 md:py-12">
+    <section style={{ background: "#0D1117" }} className="px-6 py-16 md:px-20 md:py-24">
       <div className="max-w-[1080px] mx-auto">
         <p
-          className="font-mono uppercase text-center mb-8 scroll-reveal"
-          style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", letterSpacing: "0.16em" }}
+          className="font-mono uppercase text-center mb-10 scroll-reveal"
+          style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", letterSpacing: "0.16em" }}
         >
           RESULTS FROM THE SYSTEM THE BOOK DOCUMENTS
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-[2px] stagger-children">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 stagger-children">
           {results.map((r) => (
             <div
               key={r.num}
-              className="text-center scroll-reveal"
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                padding: "24px 20px",
-              }}
+              className="glass-card text-center p-8 scroll-reveal"
             >
-              <span className="font-serif font-semibold text-gold block" style={{ fontSize: 44 }}>
+              <span className="font-display font-black text-gold block" style={{ fontSize: 48 }}>
                 {r.num}
               </span>
               <span
-                className="font-mono block mt-1.5"
-                style={{ fontSize: 8, color: "rgba(255,255,255,0.38)", lineHeight: 1.55 }}
+                className="font-sans block mt-2"
+                style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", lineHeight: 1.55 }}
               >
                 {r.label}
               </span>
@@ -43,8 +38,8 @@ const ResultsSection = () => {
         </div>
 
         <p
-          className="font-sans text-center mt-8 scroll-reveal"
-          style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}
+          className="font-sans text-center mt-10 scroll-reveal"
+          style={{ fontSize: 14, color: "rgba(255,255,255,0.35)" }}
         >
           These are not projections. These are results from the system the book documents. They are reproducible. The framework explains why.
         </p>

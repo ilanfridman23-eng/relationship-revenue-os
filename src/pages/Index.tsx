@@ -1,5 +1,6 @@
 import StickyNav from "@/components/StickyNav";
 import HeroSection from "@/components/HeroSection";
+import SocialProofBar from "@/components/SocialProofBar";
 import MissionSection from "@/components/MissionSection";
 import EpisodeSection from "@/components/EpisodeSection";
 import BookSection from "@/components/BookSection";
@@ -18,6 +19,7 @@ const Index = () => {
       <StickyNav />
       <main>
         <HeroSection />
+        <SocialProofBar />
         <MissionSection />
         <EpisodeSection />
         <BookSection />

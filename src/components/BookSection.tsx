@@ -32,50 +32,52 @@ const BookSection = () => {
   ];
 
   return (
-    <section id="book" className="px-6 py-16 md:px-20 md:py-24" style={{ background: "#0D1117" }}>
+    <section id="book" className="px-6 py-20 md:px-20 md:py-28" style={{ background: "#131820" }}>
       <div className="max-w-[1080px] mx-auto stagger-children text-center">
-        <span className="font-mono uppercase tracking-[0.2em] text-gold scroll-reveal" style={{ fontSize: 9 }}>
+        <span className="font-mono uppercase tracking-[0.2em] text-gold scroll-reveal" style={{ fontSize: 10 }}>
           The Framework
         </span>
 
         <h2
-          className="font-serif font-light text-white mt-4 scroll-reveal"
-          style={{ fontSize: "clamp(36px, 4.5vw, 54px)", lineHeight: 1.08 }}
+          className="font-display font-black text-white mt-5 scroll-reveal"
+          style={{ fontSize: "clamp(40px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
         >
           GTM for Professional Services
         </h2>
 
-        <p className="font-serif italic text-gold mt-2 scroll-reveal" style={{ fontSize: 30 }}>
+        <p className="font-serif italic text-gold mt-3 scroll-reveal" style={{ fontSize: 32 }}>
           The Relationship Revenue OS
         </p>
 
         {/* Book display */}
-        <div className="relative mx-auto mt-10 scroll-reveal" style={{ maxWidth: 520, height: 280 }}>
+        <div className="relative mx-auto mt-12 scroll-reveal" style={{ maxWidth: 520, height: 300 }}>
           <img
             src={bookCover}
             alt="GTM for Professional Services"
             className="absolute"
             style={{
-              width: 170,
+              width: 180,
               aspectRatio: "2/3",
               transform: "rotate(-3deg)",
-              boxShadow: "0 24px 48px rgba(0,0,0,0.6)",
+              boxShadow: "0 28px 56px rgba(0,0,0,0.6)",
               left: "10%",
               top: 0,
               zIndex: 2,
               objectFit: "cover",
+              borderRadius: 4,
             }}
           />
           <div
             className="absolute flex items-center justify-center"
             style={{
               width: 26,
-              height: 255,
+              height: 270,
               background: "#B8933A",
               left: "50%",
               top: 5,
               transform: "translateX(-50%)",
               zIndex: 1,
+              borderRadius: 2,
             }}
           >
             <span
@@ -87,56 +89,46 @@ const BookSection = () => {
           </div>
           <img
             src={bookCover}
-            alt="GTM for Professional Services - Back"
+            alt="GTM for Professional Services"
             className="absolute"
             style={{
-              width: 170,
+              width: 180,
               aspectRatio: "2/3",
               transform: "rotate(3deg)",
-              boxShadow: "0 24px 48px rgba(0,0,0,0.4)",
+              boxShadow: "0 28px 56px rgba(0,0,0,0.4)",
               right: "10%",
               top: 10,
               zIndex: 0,
               objectFit: "cover",
+              borderRadius: 4,
             }}
           />
         </div>
 
         {/* Pull quote */}
         <p
-          className="font-serif italic text-white text-center mx-auto mt-12 scroll-reveal"
-          style={{ fontSize: 24, maxWidth: 580 }}
+          className="font-serif italic text-white text-center mx-auto mt-14 scroll-reveal"
+          style={{ fontSize: 26, maxWidth: 580 }}
         >
           "Your next client already knows you. The problem is you have no system to reach them."
         </p>
 
         {/* Content cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-14">
           {chapters.map((ch) => (
             <div
               key={ch.num}
-              className="text-left transition-colors duration-150 scroll-reveal"
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                padding: 28,
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.borderColor = "rgba(184,147,58,0.3)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")
-              }
+              className="glass-card text-left p-8 scroll-reveal"
             >
-              <span className="font-serif font-light text-gold" style={{ fontSize: 38 }}>
+              <span className="font-display font-black text-gold" style={{ fontSize: 42 }}>
                 {ch.num}
               </span>
-              <h3 className="font-sans font-semibold text-white mt-2" style={{ fontSize: 15 }}>
+              <h3 className="font-sans font-semibold text-white mt-2" style={{ fontSize: 16 }}>
                 {ch.title}
               </h3>
               <p
-                className="font-sans mt-2"
-                style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.65 }}
+                className="font-sans mt-3"
+                style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.65 }}
               >
                 {ch.body}
               </p>
@@ -146,8 +138,8 @@ const BookSection = () => {
 
         {/* Timeline */}
         <p
-          className="font-mono uppercase text-center mt-14 mb-4 scroll-reveal"
-          style={{ fontSize: 9, color: "rgba(255,255,255,0.35)", letterSpacing: "0.16em" }}
+          className="font-mono uppercase text-center mt-16 mb-4 scroll-reveal"
+          style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", letterSpacing: "0.16em" }}
         >
           PUBLICATION TIMELINE
         </p>
@@ -162,19 +154,19 @@ const BookSection = () => {
               className="absolute flex flex-col items-center"
               style={{ left: `${m.pct}%`, top: 0, transform: "translateX(-50%)" }}
             >
-              <span className="font-mono text-center" style={{ fontSize: 8, color: "rgba(255,255,255,0.5)", marginBottom: 6 }}>
+              <span className="font-mono text-center" style={{ fontSize: 9, color: "rgba(255,255,255,0.5)", marginBottom: 6 }}>
                 {m.label}
               </span>
               <span
                 className="rounded-full"
                 style={{
-                  width: 8,
-                  height: 8,
+                  width: 10,
+                  height: 10,
                   background: m.filled ? "#B8933A" : "transparent",
                   border: m.filled ? "none" : "1.5px solid rgba(255,255,255,0.4)",
                 }}
               />
-              <span className="font-mono mt-1" style={{ fontSize: 8, color: "rgba(255,255,255,0.35)" }}>
+              <span className="font-mono mt-1" style={{ fontSize: 9, color: "rgba(255,255,255,0.35)" }}>
                 {m.date}
               </span>
             </div>
