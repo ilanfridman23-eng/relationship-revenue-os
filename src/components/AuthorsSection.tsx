@@ -1,3 +1,6 @@
+import adamPhoto from "@/assets/adam-fridman.png";
+import richardPhoto from "@/assets/richard-ashbaugh.png";
+
 const AuthorsSection = () => {
   return (
     <section id="authors" className="bg-parchment px-6 py-16 md:px-20 md:py-24">
