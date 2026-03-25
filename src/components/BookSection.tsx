@@ -50,13 +50,12 @@ const BookSection = () => {
         </p>
 
         {/* Book display */}
-        <div className="relative mx-auto mt-12 scroll-reveal" style={{ maxWidth: 520, height: 300 }}>
+        <div className="relative mx-auto mt-12 scroll-reveal max-w-[320px] sm:max-w-[520px] h-[220px] sm:h-[300px]">
           <img
             src={bookCover}
             alt="GTM for Professional Services"
-            className="absolute"
+            className="absolute w-[130px] sm:w-[180px]"
             style={{
-              width: 180,
               aspectRatio: "2/3",
               transform: "rotate(-3deg)",
               boxShadow: "0 28px 56px rgba(0,0,0,0.2)",
@@ -68,10 +67,9 @@ const BookSection = () => {
             }}
           />
           <div
-            className="absolute flex items-center justify-center"
+            className="absolute flex items-center justify-center h-[200px] sm:h-[270px]"
             style={{
               width: 26,
-              height: 270,
               background: "#B8933A",
               left: "50%",
               top: 5,
@@ -90,9 +88,8 @@ const BookSection = () => {
           <img
             src={bookCover}
             alt="GTM for Professional Services"
-            className="absolute"
+            className="absolute w-[130px] sm:w-[180px]"
             style={{
-              width: 180,
               aspectRatio: "2/3",
               transform: "rotate(3deg)",
               boxShadow: "0 28px 56px rgba(0,0,0,0.15)",
@@ -143,7 +140,8 @@ const BookSection = () => {
         >
           PUBLICATION TIMELINE
         </p>
-        <div className="relative mx-auto scroll-reveal" style={{ maxWidth: 680, height: 60 }}>
+        {/* Timeline - horizontal on md+, vertical on mobile */}
+        <div className="hidden md:block relative mx-auto scroll-reveal" style={{ maxWidth: 680, height: 60 }}>
           <div
             className="absolute top-[28px] left-0 right-0"
             style={{ height: 2, background: "rgba(0,0,0,0.1)" }}
@@ -167,6 +165,27 @@ const BookSection = () => {
                 }}
               />
               <span className="font-mono mt-1" style={{ fontSize: 9, color: "rgba(0,0,0,0.35)" }}>
+                {m.date}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div className="flex md:hidden flex-col gap-3 mt-2 scroll-reveal max-w-[280px] mx-auto">
+          {milestones.map((m) => (
+            <div key={m.label} className="flex items-center gap-3">
+              <span
+                className="rounded-full flex-shrink-0"
+                style={{
+                  width: 10,
+                  height: 10,
+                  background: m.filled ? "#B8933A" : "transparent",
+                  border: m.filled ? "none" : "1.5px solid rgba(0,0,0,0.3)",
+                }}
+              />
+              <span className="font-mono" style={{ fontSize: 10, color: "rgba(0,0,0,0.5)" }}>
+                {m.label}
+              </span>
+              <span className="font-mono ml-auto" style={{ fontSize: 10, color: "rgba(0,0,0,0.35)" }}>
                 {m.date}
               </span>
             </div>
