@@ -1,3 +1,6 @@
+import adamPhoto from "@/assets/adam-fridman.png";
+import richardPhoto from "@/assets/richard-ashbaugh.png";
+
 const AuthorsSection = () => {
   return (
     <section id="authors" className="bg-parchment px-6 py-16 md:px-20 md:py-24">
@@ -17,10 +20,7 @@ const AuthorsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
           {/* Adam */}
           <div className="bg-white border border-border-color p-10 scroll-reveal">
-            <div className="w-24 h-24 rounded-full bg-warm flex items-center justify-center mx-auto md:mx-0">
-              <span className="font-serif text-gold" style={{ fontSize: 30 }}>AF</span>
-            </div>
-            {/* Replace this circle with Adam Fridman professional headshot */}
+            <img src={adamPhoto} alt="Adam Fridman" className="w-24 h-24 rounded-full object-cover mx-auto md:mx-0" />
             <h3 className="font-serif font-semibold text-ink mt-4" style={{ fontSize: 28 }}>Adam Fridman</h3>
             <p className="font-mono uppercase text-gold mt-1" style={{ fontSize: 9, letterSpacing: "0.14em" }}>
               Founder, Mabbly · Author · Host, Signal Activated Growth Podcast
@@ -48,10 +48,7 @@ const AuthorsSection = () => {
 
           {/* Richard */}
           <div className="bg-white border border-border-color p-10 scroll-reveal">
-            <div className="w-24 h-24 rounded-full bg-warm flex items-center justify-center mx-auto md:mx-0">
-              <span className="font-serif text-gold" style={{ fontSize: 30 }}>RA</span>
-            </div>
-            {/* Replace this circle with Richard Ashbaugh professional headshot */}
+            <img src={richardPhoto} alt="Richard Ashbaugh" className="w-24 h-24 rounded-full object-cover mx-auto md:mx-0" />
             <h3 className="font-serif font-semibold text-ink mt-4" style={{ fontSize: 28 }}>Richard Ashbaugh</h3>
             <p className="font-mono uppercase text-gold mt-1" style={{ fontSize: 9, letterSpacing: "0.14em" }}>
               CEO, Mabbly · Former CMO, AArete · Former CMO, Lotis Blue Consulting
