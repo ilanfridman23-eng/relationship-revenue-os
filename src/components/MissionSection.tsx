@@ -107,7 +107,7 @@ const MissionSection = () => {
           </h2>
 
           <p
-            className="font-serif italic text-gold mt-4 scroll-reveal"
+            className="font-serif italic text-gold mt-4"
             style={{ fontSize: "clamp(20px, 2.5vw, 28px)" }}
           >
             Nobody built them a growth engine. Until now.
