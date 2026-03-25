@@ -60,11 +60,9 @@ const StickyNav = () => {
         {/* CTA */}
         <a
           href="#apply"
-          className="hidden md:inline-flex font-sans font-semibold rounded-full transition-all duration-200 hover:bg-white hover:text-ink"
+          className="hidden md:inline-flex font-sans font-semibold rounded-full transition-all duration-200 text-white border border-white/25 hover:bg-white hover:text-ink"
           style={{
             fontSize: 13,
-            border: "1px solid rgba(255,255,255,0.25)",
-            color: "white",
             padding: "8px 24px",
           }}
         >
