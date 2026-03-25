@@ -9,11 +9,11 @@ const logos = [
 
 const SocialProofBar = () => {
   return (
-    <section className="px-6 py-10 md:px-20 md:py-14" style={{ background: "#0D1117" }}>
+    <section className="px-6 py-10 md:px-20 md:py-14 bg-cream">
       <div className="max-w-[1080px] mx-auto">
         <p
           className="font-mono uppercase text-center mb-8 scroll-reveal"
-          style={{ fontSize: 10, color: "rgba(255,255,255,0.25)", letterSpacing: "0.2em" }}
+          style={{ fontSize: 10, color: "rgba(0,0,0,0.35)", letterSpacing: "0.2em" }}
         >
           TRUSTED BY FIRMS ACROSS NORTH AMERICA
         </p>
@@ -22,7 +22,7 @@ const SocialProofBar = () => {
             <span
               key={name}
               className="font-display font-bold"
-              style={{ fontSize: 18, color: "rgba(255,255,255,0.18)", letterSpacing: "-0.01em" }}
+              style={{ fontSize: 18, color: "rgba(0,0,0,0.22)", letterSpacing: "-0.01em" }}
             >
               {name}
             </span>

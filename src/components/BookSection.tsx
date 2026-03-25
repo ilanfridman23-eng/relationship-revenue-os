@@ -32,14 +32,14 @@ const BookSection = () => {
   ];
 
   return (
-    <section id="book" className="px-6 py-20 md:px-20 md:py-28" style={{ background: "#131820" }}>
+    <section id="book" className="px-6 py-20 md:px-20 md:py-28 bg-cream">
       <div className="max-w-[1080px] mx-auto stagger-children text-center">
         <span className="font-mono uppercase tracking-[0.2em] text-gold scroll-reveal" style={{ fontSize: 10 }}>
           The Framework
         </span>
 
         <h2
-          className="font-display font-black text-white mt-5 scroll-reveal"
+          className="font-display font-black text-text-dark mt-5 scroll-reveal"
           style={{ fontSize: "clamp(40px, 5vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
         >
           GTM for Professional Services
@@ -59,7 +59,7 @@ const BookSection = () => {
               width: 180,
               aspectRatio: "2/3",
               transform: "rotate(-3deg)",
-              boxShadow: "0 28px 56px rgba(0,0,0,0.6)",
+              boxShadow: "0 28px 56px rgba(0,0,0,0.2)",
               left: "10%",
               top: 0,
               zIndex: 2,
@@ -95,7 +95,7 @@ const BookSection = () => {
               width: 180,
               aspectRatio: "2/3",
               transform: "rotate(3deg)",
-              boxShadow: "0 28px 56px rgba(0,0,0,0.4)",
+              boxShadow: "0 28px 56px rgba(0,0,0,0.15)",
               right: "10%",
               top: 10,
               zIndex: 0,
@@ -107,7 +107,7 @@ const BookSection = () => {
 
         {/* Pull quote */}
         <p
-          className="font-serif italic text-white text-center mx-auto mt-14 scroll-reveal"
+          className="font-serif italic text-text-dark text-center mx-auto mt-14 scroll-reveal"
           style={{ fontSize: 26, maxWidth: 580 }}
         >
           "Your next client already knows you. The problem is you have no system to reach them."
@@ -118,17 +118,17 @@ const BookSection = () => {
           {chapters.map((ch) => (
             <div
               key={ch.num}
-              className="glass-card text-left p-8 scroll-reveal"
+              className="glass-card-light rounded-xl text-left p-8 scroll-reveal"
             >
               <span className="font-display font-black text-gold" style={{ fontSize: 42 }}>
                 {ch.num}
               </span>
-              <h3 className="font-sans font-semibold text-white mt-2" style={{ fontSize: 16 }}>
+              <h3 className="font-sans font-semibold text-text-dark mt-2" style={{ fontSize: 16 }}>
                 {ch.title}
               </h3>
               <p
-                className="font-sans mt-3"
-                style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.65 }}
+                className="font-sans text-text-body mt-3"
+                style={{ fontSize: 14, lineHeight: 1.65 }}
               >
                 {ch.body}
               </p>
@@ -139,14 +139,14 @@ const BookSection = () => {
         {/* Timeline */}
         <p
           className="font-mono uppercase text-center mt-16 mb-4 scroll-reveal"
-          style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", letterSpacing: "0.16em" }}
+          style={{ fontSize: 10, color: "rgba(0,0,0,0.35)", letterSpacing: "0.16em" }}
         >
           PUBLICATION TIMELINE
         </p>
         <div className="relative mx-auto scroll-reveal" style={{ maxWidth: 680, height: 60 }}>
           <div
             className="absolute top-[28px] left-0 right-0"
-            style={{ height: 2, background: "rgba(255,255,255,0.1)" }}
+            style={{ height: 2, background: "rgba(0,0,0,0.1)" }}
           />
           {milestones.map((m) => (
             <div
@@ -154,7 +154,7 @@ const BookSection = () => {
               className="absolute flex flex-col items-center"
               style={{ left: `${m.pct}%`, top: 0, transform: "translateX(-50%)" }}
             >
-              <span className="font-mono text-center" style={{ fontSize: 9, color: "rgba(255,255,255,0.5)", marginBottom: 6 }}>
+              <span className="font-mono text-center" style={{ fontSize: 9, color: "rgba(0,0,0,0.5)", marginBottom: 6 }}>
                 {m.label}
               </span>
               <span
@@ -163,10 +163,10 @@ const BookSection = () => {
                   width: 10,
                   height: 10,
                   background: m.filled ? "#B8933A" : "transparent",
-                  border: m.filled ? "none" : "1.5px solid rgba(255,255,255,0.4)",
+                  border: m.filled ? "none" : "1.5px solid rgba(0,0,0,0.3)",
                 }}
               />
-              <span className="font-mono mt-1" style={{ fontSize: 9, color: "rgba(255,255,255,0.35)" }}>
+              <span className="font-mono mt-1" style={{ fontSize: 9, color: "rgba(0,0,0,0.35)" }}>
                 {m.date}
               </span>
             </div>

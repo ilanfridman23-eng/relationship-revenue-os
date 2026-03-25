@@ -9,11 +9,11 @@ const ResultsSection = () => {
   ];
 
   return (
-    <section style={{ background: "#0D1117" }} className="px-6 py-16 md:px-20 md:py-24">
+    <section className="px-6 py-16 md:px-20 md:py-24 bg-cream">
       <div className="max-w-[1080px] mx-auto">
         <p
           className="font-mono uppercase text-center mb-10 scroll-reveal"
-          style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", letterSpacing: "0.16em" }}
+          style={{ fontSize: 10, color: "rgba(0,0,0,0.4)", letterSpacing: "0.16em" }}
         >
           RESULTS FROM THE SYSTEM THE BOOK DOCUMENTS
         </p>
@@ -22,14 +22,14 @@ const ResultsSection = () => {
           {results.map((r) => (
             <div
               key={r.num}
-              className="glass-card text-center p-8 scroll-reveal"
+              className="glass-card-light rounded-xl text-center p-8 scroll-reveal"
             >
               <span className="font-display font-black text-gold block" style={{ fontSize: 48 }}>
                 {r.num}
               </span>
               <span
-                className="font-sans block mt-2"
-                style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", lineHeight: 1.55 }}
+                className="font-sans text-text-body block mt-2"
+                style={{ fontSize: 12, lineHeight: 1.55 }}
               >
                 {r.label}
               </span>
@@ -39,7 +39,7 @@ const ResultsSection = () => {
 
         <p
           className="font-sans text-center mt-10 scroll-reveal"
-          style={{ fontSize: 14, color: "rgba(255,255,255,0.35)" }}
+          style={{ fontSize: 14, color: "rgba(0,0,0,0.45)" }}
         >
           These are not projections. These are results from the system the book documents. They are reproducible. The framework explains why.
         </p>

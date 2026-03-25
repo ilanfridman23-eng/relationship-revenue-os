@@ -18,8 +18,8 @@ const ApplySection = () => {
 
   const inputClasses = "w-full font-sans text-sm text-white outline-none rounded-lg transition-colors duration-200";
   const inputStyle: React.CSSProperties = {
-    background: "rgba(255,255,255,0.05)",
-    border: "1px solid rgba(255,255,255,0.12)",
+    background: "rgba(255,255,255,0.06)",
+    border: "1px solid rgba(255,255,255,0.15)",
     padding: "14px 18px",
   };
 
@@ -27,7 +27,7 @@ const ApplySection = () => {
     fontFamily: "'DM Mono', monospace",
     fontSize: 10,
     textTransform: "uppercase" as const,
-    color: "rgba(255,255,255,0.45)",
+    color: "rgba(255,255,255,0.55)",
     letterSpacing: "0.14em",
     display: "block",
     marginBottom: 8,
@@ -37,15 +37,14 @@ const ApplySection = () => {
     e.currentTarget.style.borderColor = "#B8933A";
   };
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
+    e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
   };
 
   return (
     <section
       id="apply"
-      className="px-6 py-20 md:px-20 md:py-28"
+      className="px-6 py-20 md:px-20 md:py-28 bg-soft-navy"
       style={{
-        background: "#131820",
         borderTop: "3px solid #B8933A",
       }}
     >
@@ -65,7 +64,7 @@ const ApplySection = () => {
           Applications close when sessions are full.
         </p>
 
-        <p className="font-sans mt-5 scroll-reveal" style={{ fontSize: 16, lineHeight: 1.75, maxWidth: 560, color: "rgba(255,255,255,0.55)" }}>
+        <p className="font-sans mt-5 scroll-reveal" style={{ fontSize: 16, lineHeight: 1.75, maxWidth: 560, color: "rgba(255,255,255,0.7)" }}>
           We review every application personally before confirming a session. We are prioritizing firms between $5M and $100M in revenue with an active business development or marketing function where the managing partner is genuinely involved in growth decisions. If your firm is outside this profile, we will let you know within 48 hours.
         </p>
 
@@ -165,15 +164,15 @@ const ApplySection = () => {
             </button>
           )}
 
-          <p className="font-sans italic mt-3 text-center" style={{ fontSize: 14, color: "rgba(255,255,255,0.4)" }}>
+          <p className="font-sans italic mt-3 text-center" style={{ fontSize: 14, color: "rgba(255,255,255,0.5)" }}>
             Free. 60 minutes with Adam and Richard. No pitch. No sales deck. Just the research.
           </p>
-          <span className="font-mono block text-center" style={{ fontSize: 9, color: "rgba(255,255,255,0.25)" }}>
+          <span className="font-mono block text-center" style={{ fontSize: 9, color: "rgba(255,255,255,0.3)" }}>
             Prefer to book directly? calendly.com/adam-fridman/30min
           </span>
         </div>
 
-        <p className="font-serif italic text-center mt-16 scroll-reveal" style={{ fontSize: 22, color: "rgba(255,255,255,0.4)" }}>
+        <p className="font-serif italic text-center mt-16 scroll-reveal" style={{ fontSize: 22, color: "rgba(255,255,255,0.5)" }}>
           The revenue your firm needs is in the relationships you already earned.
         </p>
       </div>
