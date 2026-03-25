@@ -4,8 +4,7 @@ const MissionSection = () => {
   return (
     <section
       id="mission"
-      className="px-6 py-20 md:px-20 md:py-28"
-      style={{ background: "#131820" }}
+      className="px-6 py-20 md:px-20 md:py-28 bg-warm-white"
     >
       <div className="max-w-[1080px] mx-auto stagger-children">
         {/* Eyebrow */}
@@ -17,7 +16,7 @@ const MissionSection = () => {
 
         {/* Headline */}
         <h2
-          className="font-display font-black text-white mt-5 scroll-reveal"
+          className="font-display font-black text-text-dark mt-5 scroll-reveal"
           style={{ fontSize: "clamp(36px, 4.5vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", maxWidth: 780 }}
         >
           Professional services firms deserve marketing as sophisticated as the work they sell. Nobody built them a system. Until now.
@@ -25,10 +24,10 @@ const MissionSection = () => {
 
         {/* Body */}
         <div className="scroll-reveal" style={{ maxWidth: 620 }}>
-          <p className="font-sans mt-7" style={{ fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.55)" }}>
+          <p className="font-sans text-text-body mt-7" style={{ fontSize: 16, lineHeight: 1.8 }}>
             Every GTM framework built in the last 40 years was designed for product companies launching to strangers. Professional services firms have been borrowing those playbooks and wondering why they do not work. The Dead Zone, the 96% of every CRM that is dormant, earned, and going to waste, exists because no GTM system was built for how PS firms actually win. Through reputation. Relationships. The right message at the right moment.
           </p>
-          <p className="font-sans mt-4" style={{ fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.55)" }}>
+          <p className="font-sans text-text-body mt-4" style={{ fontSize: 16, lineHeight: 1.8 }}>
             GTM for Professional Services is the first system built from scratch for this reality. Not theory. Not research from the outside. Fifty Discovery Sessions with managing partners who are living this problem right now. Their situations shape the chapters. The chapters become the framework. The framework changes how an entire industry grows.
           </p>
         </div>
@@ -52,14 +51,14 @@ const MissionSection = () => {
               body: "Every managing partner who participates shapes a chapter. The first 50 sessions define the book. 46 spots remain. Applications close when sessions are full and the manuscript enters final draft.",
             },
           ].map((pillar) => (
-            <div key={pillar.num} className="glass-card p-8 scroll-reveal">
+            <div key={pillar.num} className="glass-card-light rounded-xl p-8 scroll-reveal">
               <span className="font-display font-black text-gold" style={{ fontSize: 36 }}>
                 {pillar.num}
               </span>
-              <h3 className="font-sans font-semibold text-white mt-3" style={{ fontSize: 17 }}>
+              <h3 className="font-sans font-semibold text-text-dark mt-3" style={{ fontSize: 17 }}>
                 {pillar.title}
               </h3>
-              <p className="font-sans mt-3" style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.5)" }}>
+              <p className="font-sans text-text-body mt-3" style={{ fontSize: 14, lineHeight: 1.7 }}>
                 {pillar.body}
               </p>
             </div>
@@ -72,7 +71,8 @@ const MissionSection = () => {
           style={{
             background: "#F5F0E8",
             padding: "28px 32px",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
+            border: "1px solid rgba(0,0,0,0.06)",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
           }}
         >
           <a
