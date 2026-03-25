@@ -4,66 +4,77 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen"
+      className="relative min-h-screen overflow-hidden"
       style={{
-        background: `radial-gradient(ellipse at 82% 28%, rgba(184,147,58,0.07) 0%, transparent 62%), #0D1117`,
+        background: `radial-gradient(ellipse at 70% 20%, rgba(184,147,58,0.06) 0%, transparent 60%), #0D1117`,
       }}
     >
-      <div className="flex flex-col md:flex-row items-center px-6 pt-[100px] pb-[60px] md:px-20 md:pt-[120px] md:pb-20 gap-10 md:gap-[60px]">
+      {/* Ambient glow */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: 600,
+          height: 600,
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(184,147,58,0.08) 0%, transparent 70%)",
+          right: "-10%",
+          top: "10%",
+          animation: "glowPulse 6s ease-in-out infinite",
+        }}
+      />
+
+      <div className="relative flex flex-col lg:flex-row items-center px-6 pt-[100px] pb-[60px] lg:px-20 lg:pt-[140px] lg:pb-24 gap-12 lg:gap-16 max-w-[1280px] mx-auto">
         {/* Book visual on mobile first */}
-        <div className="block md:hidden w-full">
+        <div className="block lg:hidden w-full">
           <BookDisplay />
         </div>
 
         {/* Left column */}
-        <div className="w-full md:w-[58%] scroll-reveal">
+        <div className="w-full lg:w-[55%] scroll-reveal">
           {/* Eyebrow */}
           <div className="flex items-center gap-3">
-            <div className="w-6 h-px bg-gold" />
+            <div className="w-8 h-px bg-gold" />
             <span
               className="font-mono uppercase tracking-[0.2em] text-gold"
-              style={{ fontSize: 9 }}
+              style={{ fontSize: 10 }}
             >
-              Book Research · Professional Services Only · Limited to 50 Sessions
+              Book Research · Limited to 50 Sessions
             </span>
           </div>
 
           {/* Headline */}
           <h1
-            className="font-serif font-light text-white mt-5"
+            className="font-display font-black text-white mt-6"
             style={{
-              fontSize: "clamp(40px, 5vw, 66px)",
-              lineHeight: 1.04,
-              letterSpacing: "-0.02em",
+              fontSize: "clamp(44px, 5.5vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.03em",
             }}
           >
-            We Are Writing the First GTM
+            The First GTM Book
             <br />
-            Book for Professional Services.
+            for Professional
             <br />
-            <span className="italic text-gold">
-              We Want to Research Your Firm.
-            </span>
+            Services.
           </h1>
 
           {/* Subhead */}
           <p
-            className="font-sans mt-[22px]"
+            className="font-sans mt-6"
             style={{
-              fontSize: 16,
-              color: "rgba(255,255,255,0.58)",
-              lineHeight: 1.78,
-              maxWidth: 500,
+              fontSize: 17,
+              color: "rgba(255,255,255,0.55)",
+              lineHeight: 1.7,
+              maxWidth: 480,
             }}
           >
             Adam Fridman and Richard Ashbaugh are conducting 50 Discovery
-            Sessions with managing partners as the foundation for GTM for
-            Professional Services. The session is free. The research shapes
-            the book. The insight is yours to keep.
+            Sessions with managing partners. The session is free. The research
+            shapes the book. The insight is yours to keep.
           </p>
 
           {/* Urgency strip */}
-          <div className="flex items-center gap-2 mt-[18px]">
+          <div className="flex items-center gap-2.5 mt-5">
             <span
               className="inline-block rounded-full bg-gold"
               style={{
@@ -74,73 +85,58 @@ const HeroSection = () => {
             />
             <span
               className="font-mono uppercase tracking-[0.14em] text-gold"
-              style={{ fontSize: 10 }}
+              style={{ fontSize: 11 }}
             >
-              46 of 50 research sessions remaining. Sessions close when the book enters final draft.
+              46 of 50 sessions remaining
             </span>
           </div>
 
-          {/* Exclusivity note */}
-          <p
-            className="font-sans italic mt-[10px]"
-            style={{ fontSize: 13, color: "rgba(255,255,255,0.38)" }}
-          >
-            We review every application. Not all firms will be selected for the research phase.
-          </p>
-
           {/* CTA row */}
-          <div className="flex flex-col sm:flex-row gap-3 mt-[30px]">
+          <div className="flex flex-col sm:flex-row gap-3 mt-8">
             <a
               href="#apply"
-              className="font-mono uppercase tracking-[0.2em] text-center transition-colors duration-150 hover:bg-[#C9A845]"
+              className="font-sans font-semibold text-center rounded-full transition-all duration-200 hover:scale-[1.02]"
               style={{
-                fontSize: 10,
+                fontSize: 15,
                 background: "#B8933A",
                 color: "#0D1117",
-                padding: "16px 38px",
+                padding: "16px 40px",
               }}
             >
-              APPLY FOR A RESEARCH SESSION
+              Apply for a Research Session
             </a>
             <a
               href="#book"
-              className="font-mono uppercase tracking-[0.2em] text-center transition-all duration-150 hover:border-white hover:text-white"
+              className="font-sans font-medium text-center rounded-full transition-all duration-200 hover:bg-white/10"
               style={{
-                fontSize: 10,
-                border: "1px solid rgba(255,255,255,0.22)",
-                color: "rgba(255,255,255,0.55)",
-                padding: "16px 38px",
+                fontSize: 15,
+                border: "1px solid rgba(255,255,255,0.2)",
+                color: "rgba(255,255,255,0.7)",
+                padding: "16px 40px",
               }}
             >
-              LEARN ABOUT THE BOOK
+              Learn About the Book
             </a>
           </div>
 
           {/* Stat strip */}
-          <div className="flex gap-3 mt-9 overflow-x-auto flex-nowrap">
+          <div className="flex gap-8 mt-12">
             {[
-              { num: "96%", label: "of PS firm CRM contacts are dormant right now" },
-              { num: "70%", label: "of PS revenue comes from existing relationships" },
-              { num: "1.3%", label: "average reply rate from generic outreach sequences" },
+              { num: "96%", label: "of PS firm CRM contacts are dormant" },
+              { num: "70%", label: "of revenue from existing relationships" },
+              { num: "1.3%", label: "average reply rate, generic outreach" },
             ].map((stat) => (
-              <div
-                key={stat.num}
-                className="flex-shrink-0"
-                style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.09)",
-                  padding: "12px 18px",
-                }}
-              >
-                <span className="font-serif font-semibold text-gold block" style={{ fontSize: 26 }}>
+              <div key={stat.num} className="flex-shrink-0">
+                <span className="font-display font-black text-gold block" style={{ fontSize: 36 }}>
                   {stat.num}
                 </span>
                 <span
-                  className="font-mono block"
+                  className="font-sans block"
                   style={{
-                    fontSize: 8,
-                    color: "rgba(255,255,255,0.38)",
-                    lineHeight: 1.5,
+                    fontSize: 11,
+                    color: "rgba(255,255,255,0.35)",
+                    lineHeight: 1.4,
+                    maxWidth: 140,
                   }}
                 >
                   {stat.label}
@@ -151,7 +147,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right column - desktop */}
-        <div className="hidden md:block w-[42%]">
+        <div className="hidden lg:block w-[45%]">
           <BookDisplay />
         </div>
       </div>
@@ -160,33 +156,52 @@ const HeroSection = () => {
 };
 
 const BookDisplay = () => (
-  <div className="relative mx-auto" style={{ maxWidth: 320, height: 300 }}>
+  <div
+    className="relative mx-auto"
+    style={{ maxWidth: 380, height: 360, animation: "bookFloat 6s ease-in-out infinite" }}
+  >
+    {/* Glow behind book */}
+    <div
+      className="absolute"
+      style={{
+        width: 200,
+        height: 200,
+        borderRadius: "50%",
+        background: "radial-gradient(circle, rgba(184,147,58,0.15) 0%, transparent 70%)",
+        left: "50%",
+        top: "50%",
+        transform: "translate(-50%, -50%)",
+      }}
+    />
+
     {/* Front cover */}
-      <img
-        src={bookCover}
-        alt="GTM for Professional Services"
-        className="absolute left-0 top-0"
-        style={{
-          width: 160,
-          aspectRatio: "2/3",
-          transform: "rotate(-4deg)",
-          boxShadow: "0 28px 56px rgba(0,0,0,0.55)",
-          zIndex: 2,
-          objectFit: "cover",
-        }}
-      />
+    <img
+      src={bookCover}
+      alt="GTM for Professional Services"
+      className="absolute left-4 top-0"
+      style={{
+        width: 180,
+        aspectRatio: "2/3",
+        transform: "rotate(-4deg)",
+        boxShadow: "0 32px 64px rgba(0,0,0,0.6)",
+        zIndex: 2,
+        objectFit: "cover",
+        borderRadius: 4,
+      }}
+    />
 
     {/* Spine */}
     <div
       className="absolute flex items-center justify-center"
       style={{
         width: 24,
-        height: 240,
+        height: 270,
         background: "#B8933A",
         left: "50%",
         top: 10,
         transform: "translateX(-50%)",
         zIndex: 1,
+        borderRadius: 2,
       }}
     >
       <span
@@ -203,24 +218,25 @@ const BookDisplay = () => (
     </div>
 
     {/* Back cover */}
-      <img
-        src={bookCover}
-        alt="GTM for Professional Services - Back"
-        className="absolute right-0 top-4"
-        style={{
-          width: 160,
-          aspectRatio: "2/3",
-          transform: "rotate(4deg)",
-          boxShadow: "0 28px 56px rgba(0,0,0,0.4)",
-          zIndex: 0,
-          objectFit: "cover",
-        }}
-      />
+    <img
+      src={bookCover}
+      alt="GTM for Professional Services"
+      className="absolute right-4 top-6"
+      style={{
+        width: 180,
+        aspectRatio: "2/3",
+        transform: "rotate(4deg)",
+        boxShadow: "0 32px 64px rgba(0,0,0,0.45)",
+        zIndex: 0,
+        objectFit: "cover",
+        borderRadius: 4,
+      }}
+    />
 
     {/* Below books label */}
     <div
       className="absolute bottom-0 left-0 right-0 text-center font-mono"
-      style={{ fontSize: 8, color: "rgba(184,147,58,0.6)" }}
+      style={{ fontSize: 9, color: "rgba(184,147,58,0.5)" }}
     >
       Q4 2026 · Mabbly Press · First Edition
     </div>

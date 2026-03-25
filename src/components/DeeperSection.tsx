@@ -23,36 +23,39 @@ const DeeperSection = () => {
   ];
 
   return (
-    <section id="deeper" className="bg-warm px-6 py-12 md:px-20 md:py-20">
+    <section id="deeper" className="px-6 py-16 md:px-20 md:py-24" style={{ background: "#131820" }}>
       <div className="max-w-[1080px] mx-auto stagger-children">
-        <span className="font-mono uppercase tracking-[0.2em] text-gold scroll-reveal" style={{ fontSize: 9 }}>
+        <span className="font-mono uppercase tracking-[0.2em] text-gold scroll-reveal" style={{ fontSize: 10 }}>
           For Managing Partners Who Want the Full Picture
         </span>
 
-        <h2 className="font-serif font-light text-ink mt-4 scroll-reveal" style={{ fontSize: "clamp(28px, 3.5vw, 42px)", lineHeight: 1.12 }}>
+        <h2
+          className="font-display font-black text-white mt-5 scroll-reveal"
+          style={{ fontSize: "clamp(32px, 4vw, 50px)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
+        >
           The framework runs deep. So does the research behind it.
         </h2>
 
-        <p className="font-sans text-slate mt-3 scroll-reveal" style={{ fontSize: 15, maxWidth: 560 }}>
+        <p className="font-sans mt-4 scroll-reveal" style={{ fontSize: 16, maxWidth: 560, color: "rgba(255,255,255,0.55)" }}>
           The research sessions are the entry point. For those who want to understand the full system before applying, these articles give you the intellectual foundation. Each article is a chapter preview published as the research progresses.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
           {articles.map((a) => (
             <div
               key={a.tag}
-              className="bg-parchment border border-border-color p-7 transition-all duration-200 hover:border-gold hover:-translate-y-0.5 scroll-reveal"
+              className="glass-card p-8 scroll-reveal"
             >
-              <span className="font-mono uppercase text-gold block mb-2.5" style={{ fontSize: 9 }}>
+              <span className="font-mono uppercase text-gold block mb-3" style={{ fontSize: 10 }}>
                 {a.tag}
               </span>
-              <h3 className="font-serif font-semibold text-ink" style={{ fontSize: 20, lineHeight: 1.2 }}>
+              <h3 className="font-display font-bold text-white" style={{ fontSize: 20, lineHeight: 1.2 }}>
                 {a.title}
               </h3>
-              <p className="font-sans text-slate mt-2.5" style={{ fontSize: 13, lineHeight: 1.65 }}>
+              <p className="font-sans mt-3" style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.5)" }}>
                 {a.body}
               </p>
-              <a href="#" className="font-mono uppercase text-gold block mt-3.5" style={{ fontSize: 9 }}>
+              <a href="#" className="font-mono uppercase text-gold block mt-4 hover:underline" style={{ fontSize: 10 }}>
                 READ THE ARTICLE →
               </a>
             </div>
@@ -61,14 +64,18 @@ const DeeperSection = () => {
 
         {/* Email capture */}
         <div
-          className="mt-8 flex flex-col md:flex-row items-start md:items-center gap-5 scroll-reveal"
-          style={{ background: "#0D1117", padding: "32px 40px" }}
+          className="mt-10 flex flex-col md:flex-row items-start md:items-center gap-5 scroll-reveal rounded-lg"
+          style={{
+            background: "rgba(255,255,255,0.03)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            padding: "32px 40px",
+          }}
         >
           <div className="flex-1">
-            <span className="font-mono uppercase text-gold" style={{ fontSize: 9 }}>
+            <span className="font-mono uppercase text-gold" style={{ fontSize: 10 }}>
               GET ARTICLES AS THEY PUBLISH
             </span>
-            <p className="font-sans mt-1" style={{ fontSize: 13, color: "rgba(255,255,255,0.45)" }}>
+            <p className="font-sans mt-1.5" style={{ fontSize: 14, color: "rgba(255,255,255,0.45)" }}>
               Each article is a chapter preview. New articles publish weekly as research sessions complete.
             </p>
           </div>
@@ -84,11 +91,11 @@ const DeeperSection = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@firm.com"
-                  className="font-sans flex-1 md:w-56 outline-none"
+                  className="font-sans flex-1 md:w-56 outline-none rounded-l-full"
                   style={{
                     background: "rgba(255,255,255,0.06)",
                     border: "1px solid rgba(255,255,255,0.15)",
-                    padding: "10px 14px",
+                    padding: "12px 20px",
                     color: "white",
                     fontSize: 14,
                   }}
@@ -97,15 +104,15 @@ const DeeperSection = () => {
                 />
                 <button
                   onClick={() => email && setSubscribed(true)}
-                  className="font-mono uppercase hover:bg-[#C9A845] transition-colors duration-150"
+                  className="font-sans font-semibold rounded-r-full hover:bg-[#C9A845] transition-colors duration-200"
                   style={{
                     background: "#B8933A",
                     color: "#0D1117",
-                    fontSize: 9,
-                    padding: "10px 20px",
+                    fontSize: 13,
+                    padding: "12px 24px",
                   }}
                 >
-                  SUBSCRIBE
+                  Subscribe
                 </button>
               </>
             )}

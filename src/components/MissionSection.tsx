@@ -2,45 +2,37 @@ const MissionSection = () => {
   return (
     <section
       id="mission"
-      className="bg-parchment px-6 py-16 md:px-20 md:py-24"
+      className="px-6 py-20 md:px-20 md:py-28"
+      style={{ background: "#131820" }}
     >
       <div className="max-w-[1080px] mx-auto stagger-children">
         {/* Eyebrow */}
         <div className="scroll-reveal">
-          <span
-            className="font-mono uppercase tracking-[0.2em] text-gold"
-            style={{ fontSize: 9 }}
-          >
+          <span className="font-mono uppercase tracking-[0.2em] text-gold" style={{ fontSize: 10 }}>
             Why This Book Exists
           </span>
         </div>
 
         {/* Headline */}
         <h2
-          className="font-serif font-light text-ink mt-4 scroll-reveal"
-          style={{ fontSize: "clamp(32px, 4vw, 46px)", lineHeight: 1.12, maxWidth: 700 }}
+          className="font-display font-black text-white mt-5 scroll-reveal"
+          style={{ fontSize: "clamp(36px, 4.5vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", maxWidth: 780 }}
         >
           Professional services firms deserve marketing as sophisticated as the work they sell. Nobody built them a system. Until now.
         </h2>
 
         {/* Body */}
         <div className="scroll-reveal" style={{ maxWidth: 620 }}>
-          <p
-            className="font-sans text-slate mt-6"
-            style={{ fontSize: 15, lineHeight: 1.8 }}
-          >
+          <p className="font-sans mt-7" style={{ fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.55)" }}>
             Every GTM framework built in the last 40 years was designed for product companies launching to strangers. Professional services firms have been borrowing those playbooks and wondering why they do not work. The Dead Zone, the 96% of every CRM that is dormant, earned, and going to waste, exists because no GTM system was built for how PS firms actually win. Through reputation. Relationships. The right message at the right moment.
           </p>
-          <p
-            className="font-sans text-slate mt-4"
-            style={{ fontSize: 15, lineHeight: 1.8 }}
-          >
+          <p className="font-sans mt-4" style={{ fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.55)" }}>
             GTM for Professional Services is the first system built from scratch for this reality. Not theory. Not research from the outside. Fifty Discovery Sessions with managing partners who are living this problem right now. Their situations shape the chapters. The chapters become the framework. The framework changes how an entire industry grows.
           </p>
         </div>
 
         {/* Three pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
           {[
             {
               num: "01",
@@ -58,14 +50,14 @@ const MissionSection = () => {
               body: "Every managing partner who participates shapes a chapter. The first 50 sessions define the book. 46 spots remain. Applications close when sessions are full and the manuscript enters final draft.",
             },
           ].map((pillar) => (
-            <div key={pillar.num} className="scroll-reveal">
-              <span className="font-serif text-gold font-semibold" style={{ fontSize: 28 }}>
+            <div key={pillar.num} className="glass-card p-8 scroll-reveal">
+              <span className="font-display font-black text-gold" style={{ fontSize: 36 }}>
                 {pillar.num}
               </span>
-              <h3 className="font-sans font-semibold text-ink mt-2" style={{ fontSize: 16 }}>
+              <h3 className="font-sans font-semibold text-white mt-3" style={{ fontSize: 17 }}>
                 {pillar.title}
               </h3>
-              <p className="font-sans text-slate mt-2" style={{ fontSize: 14, lineHeight: 1.7 }}>
+              <p className="font-sans mt-3" style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.5)" }}>
                 {pillar.body}
               </p>
             </div>
@@ -74,14 +66,14 @@ const MissionSection = () => {
 
         {/* Callout box */}
         <div
-          className="mt-12 scroll-reveal"
+          className="mt-14 scroll-reveal rounded-lg"
           style={{
-            background: "rgba(184,147,58,0.07)",
+            background: "rgba(184,147,58,0.06)",
             borderLeft: "3px solid #B8933A",
-            padding: "24px 28px",
+            padding: "28px 32px",
           }}
         >
-          <p className="font-sans text-slate" style={{ fontSize: 15, lineHeight: 1.75 }}>
+          <p className="font-sans" style={{ fontSize: 15, lineHeight: 1.75, color: "rgba(255,255,255,0.55)" }}>
             This is the same research model Adam used for The Science of Story. 500 interviews, 100 podcast episodes, one book that changed how brands think about narrative. GTM for Professional Services applies the same method to the problem professional services firms have never had a framework to solve.
           </p>
         </div>

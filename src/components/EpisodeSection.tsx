@@ -1,29 +1,29 @@
 const EpisodeSection = () => {
   return (
-    <section id="episode" className="bg-warm px-6 py-12 md:px-20 md:py-20">
+    <section id="episode" className="px-6 py-16 md:px-20 md:py-24" style={{ background: "#0D1117" }}>
       <div className="max-w-[1080px] mx-auto stagger-children">
-        <span className="font-mono uppercase tracking-[0.2em] text-gold scroll-reveal" style={{ fontSize: 9 }}>
+        <span className="font-mono uppercase tracking-[0.2em] text-gold scroll-reveal" style={{ fontSize: 10 }}>
           The Conversation That Started It All
         </span>
 
         <h2
-          className="font-serif font-light text-ink mt-4 scroll-reveal"
-          style={{ fontSize: "clamp(28px, 3.5vw, 42px)", lineHeight: 1.12 }}
+          className="font-display font-black text-white mt-5 scroll-reveal"
+          style={{ fontSize: "clamp(32px, 4vw, 52px)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
         >
           The Episode That Named the Dead Zone
         </h2>
 
         <p
-          className="font-sans text-slate mt-4 scroll-reveal"
-          style={{ fontSize: 15, lineHeight: 1.78, maxWidth: 560 }}
+          className="font-sans mt-5 scroll-reveal"
+          style={{ fontSize: 16, lineHeight: 1.75, maxWidth: 560, color: "rgba(255,255,255,0.55)" }}
         >
           This Signal Activated Growth episode is where the Dead Zone concept first took shape in public. The conversation between Adam and Richard where the vocabulary of PS GTM was born. Managing partners who listened said: that is exactly what we have been living with and nobody has named it until now.
         </p>
 
         {/* YouTube embed */}
         <div
-          className="relative overflow-hidden mx-auto mt-8 scroll-reveal"
-          style={{ paddingBottom: "56.25%", height: 0, maxWidth: 720, background: "#0D1117" }}
+          className="relative overflow-hidden mx-auto mt-10 scroll-reveal rounded-lg"
+          style={{ paddingBottom: "56.25%", height: 0, maxWidth: 800, background: "#0D1117" }}
         >
           <iframe
             className="absolute top-0 left-0 w-full h-full border-none"
@@ -35,7 +35,7 @@ const EpisodeSection = () => {
         </div>
 
         {/* Link pills */}
-        <div className="flex flex-wrap justify-center gap-3 mt-6 scroll-reveal">
+        <div className="flex flex-wrap justify-center gap-3 mt-8 scroll-reveal">
           {[
             { label: "Signal Activated Growth Podcast →", href: "#" },
             { label: "Listen on Spotify →", href: "#" },
@@ -44,8 +44,12 @@ const EpisodeSection = () => {
             <a
               key={link.label}
               href={link.href}
-              className="font-mono uppercase text-slate border border-border-color bg-parchment transition-colors duration-150 hover:border-gold hover:text-gold"
-              style={{ fontSize: 9, padding: "8px 16px" }}
+              className="font-sans text-sm rounded-full transition-all duration-200 hover:border-gold hover:text-gold"
+              style={{
+                padding: "8px 20px",
+                border: "1px solid rgba(255,255,255,0.15)",
+                color: "rgba(255,255,255,0.5)",
+              }}
             >
               {link.label}
             </a>
