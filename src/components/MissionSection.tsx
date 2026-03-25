@@ -1,3 +1,5 @@
+import scienceOfStoryCover from "@/assets/science-of-story-cover.png";
+
 const MissionSection = () => {
   return (
     <section
