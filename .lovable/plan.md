@@ -1,53 +1,16 @@
 
-Issue confirmed from the screenshot: the SocialProof bar renders, then the next section background appears but the Mission section content is hidden. This is still the scroll reveal system, not true empty spacing.
 
-Why it is happening:
-- `src/index.css` still hides content globally after JS adds `reveal-ready`.
-- `src/components/MissionSection.tsx` applies `scroll-reveal` to nearly every visible block in the section.
-- So if the observer callback is delayed or missed for that section, the whole panel becomes a blank white block.
+## Fix: Episode Section Text Alignment
 
-Implementation plan:
+The text (eyebrow, headline, paragraph) is left-aligned while the YouTube embed and link pills are centered (`mx-auto`, `justify-center`). This creates a visual disconnect visible in the screenshot.
 
-1. Replace the global reveal model with per element reveal state.
-- Update `src/hooks/useScrollReveal.ts` so each `.scroll-reveal` element is initialized individually.
-- Add a `reveal-pending` class only to elements the hook is actively managing.
-- Immediately mark items already in or near the viewport as `visible`.
-- When an element reveals, remove `reveal-pending` and optionally unobserve it.
+### Changes in `src/components/EpisodeSection.tsx`
 
-2. Update the CSS so only pending elements are hidden.
-- In `src/index.css`, stop using `.reveal-ready .scroll-reveal`.
-- Use a safer rule such as:
-  - `.scroll-reveal` = visible baseline
-  - `.scroll-reveal.reveal-pending:not(.visible)` = hidden and shifted down
-  - `.scroll-reveal.visible` = shown
-- Keep the same timing and stagger behavior.
+1. **Center-align the text content** to match the centered video and link pills:
+   - Add `text-center` to the wrapper div or to each text element
+   - Center the paragraph by adding `mx-auto` to it (it already has `maxWidth: 560`)
 
-3. Make the Mission section fail safe by design.
-- In `src/components/MissionSection.tsx`, remove `scroll-reveal` from the highest impact content:
-  - eyebrow block
-  - main headline
-  - subhead
-  - divider
-  - callout panel
-- Keep motion only where it adds value and does not risk blanking the whole section, such as card hover states and count up stats.
+2. **Remove `scroll-reveal`** from the eyebrow, headline, and paragraph to prevent blank content (consistent with the reliability fixes applied to other sections)
 
-4. Audit other sections that can blank entire blocks.
-- Review `src/components/SocialProofBar.tsx`
-- Review `src/components/ApplySection.tsx`
-- Review `src/components/ResultsSection.tsx`
-- Review `src/components/Footer.tsx`
-- Remove `scroll-reveal` from any large wrapper where one missed observer event can hide the whole section.
+This is a small alignment fix, no layout or design changes.
 
-5. Preserve the current visual direction.
-- No redesign.
-- Keep the visual storytelling cards, hover polish, and animated counters.
-- This pass is strictly about reliability and readability so content is always present first, animated second.
-
-Files to update:
-- `src/hooks/useScrollReveal.ts`
-- `src/index.css`
-- `src/components/MissionSection.tsx`
-- Possibly `src/components/SocialProofBar.tsx`
-- Possibly `src/components/ApplySection.tsx`
-- Possibly `src/components/ResultsSection.tsx`
-- Possibly `src/components/Footer.tsx`
