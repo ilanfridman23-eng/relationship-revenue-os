@@ -241,7 +241,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right column — book spread (desktop) */}
-        <div className="hidden lg:flex w-[55%] items-center justify-center relative">
+        <div className="hidden lg:flex w-[55%] items-center justify-center relative overflow-hidden max-w-full">
           <BookSpread large bookRef={bookRef} lightPos={lightPos} />
         </div>
       </div>
@@ -303,17 +303,16 @@ const BookSpread = ({
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center" ref={bookRef}>
+    <div className="relative flex flex-col items-center" ref={bookRef} style={{ maxWidth: 580, width: "100%" }}>
       {/* Unified book object */}
-      <div style={{ perspective: 1400 }}>
+      <div>
         <div
           style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "stretch",
             height: h,
-            transform: "rotate(-1.5deg) rotateX(3deg)",
-            transformStyle: "preserve-3d",
+            transform: "rotate(-1deg)",
             boxShadow: "0px 32px 80px rgba(0,0,0,0.55), 0px 8px 24px rgba(0,0,0,0.35)",
             position: "relative",
             opacity: mounted ? 1 : 0,
@@ -322,13 +321,13 @@ const BookSpread = ({
           }}
         >
           {/* Left page (cover) */}
-          <div className="relative" style={{ height: "100%" }}>
+          <div className="relative" style={{ height: "100%", width: "calc(50% - 7px)", flexShrink: 0, overflow: "hidden" }}>
             <img
               src={bookCover}
               alt="GTM for Professional Services"
               style={{
                 height: "100%",
-                width: "auto",
+                width: "100%",
                 objectFit: "cover",
                 borderRadius: "6px 0 0 6px",
                 display: "block",
@@ -377,7 +376,9 @@ const BookSpread = ({
           {/* Right page (chapter page area) */}
           <div className="relative" style={{
             height: "100%",
-            width: h * 0.62,
+            width: "calc(50% - 7px)",
+            flexShrink: 0,
+            perspective: 1400,
             transformStyle: "preserve-3d",
           }}>
             {/* Revealed interior page (behind the turning page) */}
