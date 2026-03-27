@@ -293,7 +293,7 @@ const BookMockup = ({
   return (
     <div
       ref={bookRef}
-      className="relative flex flex-col items-center w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[580px] mx-auto"
+      className="relative flex flex-col items-center w-full max-w-[220px] sm:max-w-[280px] lg:max-w-[580px] mx-auto"
     >
       {/* Book object */}
       <div
