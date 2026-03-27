@@ -1,6 +1,9 @@
+import { useState } from "react";
 import bookCover from "@/assets/book-cover.png";
+import FrameworkOverlay from "./FrameworkOverlay";
 
 const BookSection = () => {
+  const [showFramework, setShowFramework] = useState(false);
   const chapters = [
     {
       num: "01",
@@ -131,6 +134,30 @@ const BookSection = () => {
           >
             First Edition · Q4 2026
           </span>
+
+          {/* See Our Framework trigger + overlay wrapper */}
+          <div
+            className="relative"
+            onMouseEnter={() => setShowFramework(true)}
+            onMouseLeave={() => setShowFramework(false)}
+          >
+            <button
+              className="font-sans mt-4 cursor-pointer transition-colors duration-200"
+              style={{
+                fontSize: 13,
+                color: "var(--gold)",
+                background: "none",
+                border: "none",
+                letterSpacing: "0.04em",
+              }}
+              onClick={() => setShowFramework((v) => !v)}
+            >
+              See Our Framework →
+            </button>
+
+            {/* Framework overlay */}
+            <FrameworkOverlay visible={showFramework} />
+          </div>
         </div>
 
         {/* Pull quote */}
