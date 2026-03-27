@@ -1,45 +1,23 @@
 
 
-## Restructure Hero: Big Title Left, Book Cover + Chapter Page Right
+## Fix Hero Section Layout: Book Spread Too Large, Text Cut Off
 
-**Current layout**: Left column has headline + book page preview + CTAs + stats. Right column has the book cover only.
-
-**New layout**: 
-- **Left column (~45%)**: Just the eyebrow, the massive headline "The First GTM Book for Professional Services.", urgency strip, CTA buttons, and stat strip. No book page here anymore.
-- **Right column (~55%)**: The book cover and the Chapter One page side by side, like an open book spread. Book cover on the left, chapter page on the right, both slightly angled toward each other to create a premium "open book" feel. Matched heights so they look like a cohesive pair.
+**Problem**: The book cover and chapter page are oversized, pushing the headline ("Professional Services") off the left edge of the screen. The 42%/58% column split combined with large book dimensions creates overflow.
 
 ### Changes in `src/components/HeroSection.tsx`
 
-1. **Remove** the book page preview from the left column (lines 105-242, the entire `mt-7 relative` div with the cream page)
+1. **Reduce book spread dimensions**: `bookW` from 260→220, `pageW` from 280→240 for `large` variant. Cap `maxWidth` at `24vw` and `26vw` respectively so they shrink on smaller desktops.
 
-2. **Move the chapter page into a new `BookSpread` component** rendered in the right column alongside the book cover:
-   - Wrap both in a flex row with slight gap
-   - Book cover: slight `rotateY(4deg)` lean (spine side)
-   - Chapter page: slight `rotateY(-3deg)` lean (open page side)
-   - Both ~260px wide on desktop, matched aspect ratio
-   - The chapter page keeps its cream styling, serif fonts, all content intact
+2. **Adjust column split**: Change left column from `lg:w-[42%]` to `lg:w-[45%]` and right column from `w-[58%]` to `w-[55%]` to give the headline more breathing room.
 
-3. **Update the right column** (line 329): replace `<BookDisplay large />` with the new `BookSpread` layout showing cover + page side by side
+3. **Reduce headline font size slightly**: Change `clamp(48px, 6vw, 84px)` to `clamp(44px, 5.5vw, 76px)` so it doesn't overflow on medium-large screens.
 
-4. **Mobile**: Stack vertically (book cover on top, chapter page below), both centered, slightly smaller
+4. **Add `overflow-hidden`** to the main flex container to prevent any residual bleed.
 
-5. **Keep**: All background layers, definition callout block, the `BookDisplay` component for the mobile-only top display (but update it to show both pieces stacked)
+5. **Tighten the gap** between the spread items: reduce `gap-1` to `gap-px` for a tighter spine feel.
 
-### Visual result
-```text
-┌─────────────────────────────────────────────────┐
-│  EYEBROW                                        │
-│                                                 │
-│  The First GTM        ┌──────┐ ┌──────────────┐ │
-│  Book for             │ BOOK │ │ CHAPTER ONE  │ │
-│  Professional         │COVER │ │ The Wrong Map│ │
-│  Services.            │      │ │ body text... │ │
-│                       │      │ │ pull quote   │ │
-│  ● 46 of 50 left      └──────┘ └──────────────┘ │
-│  [Apply] [Learn]        Q4 2026 · First Edition  │
-│  96%  70%  1.3%                                  │
-└─────────────────────────────────────────────────┘
-```
+### Result
+The headline stays fully visible, the book spread scales proportionally, and the two pieces sit side by side without pushing content off-screen.
 
 ### Files
 - `src/components/HeroSection.tsx` — single file
