@@ -321,13 +321,13 @@ const BookSpread = ({
           }}
         >
           {/* Left page (cover) */}
-          <div className="relative" style={{ height: "100%" }}>
+          <div className="relative" style={{ height: "100%", width: "calc(50% - 7px)", flexShrink: 0, overflow: "hidden" }}>
             <img
               src={bookCover}
               alt="GTM for Professional Services"
               style={{
                 height: "100%",
-                width: "auto",
+                width: "100%",
                 objectFit: "cover",
                 borderRadius: "6px 0 0 6px",
                 display: "block",
