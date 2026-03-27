@@ -313,7 +313,7 @@ const BookMockup = ({
             style={{
               width: "50%",
               background: "#F5EDD8",
-              minHeight: 280,
+              minHeight: 220,
               maxHeight: 480,
               borderRadius: "2px 0 0 2px",
               boxShadow: "inset -12px 0 24px rgba(0,0,0,0.12)",
