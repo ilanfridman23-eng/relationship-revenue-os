@@ -204,7 +204,7 @@ const HeroSection = () => {
           </div>
 
           {/* Stat strip */}
-          <div ref={statRef} className="flex gap-0 mt-14">
+          <div ref={statRef} className="flex flex-wrap gap-y-6 gap-0 mt-10 lg:mt-14">
             {[
               { num: stat1, label: "of PS firm CRM contacts are dormant" },
               { num: stat2, label: "of revenue from existing relationships" },
