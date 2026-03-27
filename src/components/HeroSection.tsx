@@ -366,9 +366,9 @@ const BookSpread = ({
           {/* Spine */}
           <div
             style={{
-              width: 14,
+              width: 10,
               height: "100%",
-              background: "linear-gradient(to right, #1A0A00 0%, #3D1E08 40%, #1A0A00 100%)",
+              background: "#2A1200",
               flexShrink: 0,
             }}
           />
