@@ -223,7 +223,7 @@ const BookSpread = ({ large }: { large?: boolean }) => {
             className="book-hero-reveal"
             style={{
               width: bookW,
-              maxWidth: large ? "30vw" : "45vw",
+              maxWidth: large ? "24vw" : "45vw",
               height: "auto",
               aspectRatio: "2/3",
               objectFit: "cover",
