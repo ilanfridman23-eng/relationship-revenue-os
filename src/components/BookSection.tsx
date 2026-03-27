@@ -139,23 +139,23 @@ const BookSection = () => {
             First Edition · Q4 2026
           </span>
 
-          {/* See Our Framework trigger */}
-          <button
-            className="font-sans mt-4 cursor-pointer transition-colors duration-200"
-            style={{
-              fontSize: 13,
-              color: "var(--gold)",
-              background: "none",
-              border: "none",
-              letterSpacing: "0.04em",
-            }}
-            onClick={() => setShowFramework((v) => !v)}
-          >
-            See Our Framework →
-          </button>
-
-          {/* Framework overlay */}
-          <FrameworkOverlay visible={showFramework} />
+          {/* Framework trigger + overlay wrapper */}
+          <div className="relative w-full flex flex-col items-center">
+            <FrameworkOverlay visible={showFramework} />
+            <button
+              className="font-sans mt-4 cursor-pointer transition-colors duration-200"
+              style={{
+                fontSize: 13,
+                color: "var(--gold)",
+                background: "none",
+                border: "none",
+                letterSpacing: "0.04em",
+              }}
+              onClick={() => setShowFramework((v) => !v)}
+            >
+              See Our Framework →
+            </button>
+          </div>
         </div>
 
         {/* Pull quote */}
