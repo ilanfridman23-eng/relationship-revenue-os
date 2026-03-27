@@ -305,15 +305,14 @@ const BookSpread = ({
   return (
     <div className="relative flex flex-col items-center" ref={bookRef} style={{ maxWidth: 580, width: "100%" }}>
       {/* Unified book object */}
-      <div style={{ perspective: 1400 }}>
+      <div>
         <div
           style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "stretch",
             height: h,
-            transform: "rotate(-1.5deg) rotateX(3deg)",
-            transformStyle: "preserve-3d",
+            transform: "rotate(-1deg)",
             boxShadow: "0px 32px 80px rgba(0,0,0,0.55), 0px 8px 24px rgba(0,0,0,0.35)",
             position: "relative",
             opacity: mounted ? 1 : 0,
