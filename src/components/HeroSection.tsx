@@ -293,7 +293,7 @@ const BookMockup = ({
   return (
     <div
       ref={bookRef}
-      className="relative flex flex-col items-center w-full max-w-[360px] lg:max-w-[540px] mx-auto"
+      className="relative flex flex-col items-center w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[580px] mx-auto"
     >
       {/* Book object */}
       <div
@@ -313,7 +313,7 @@ const BookMockup = ({
             style={{
               width: "50%",
               background: "#F5EDD8",
-              minHeight: 280,
+              minHeight: 220,
               maxHeight: 480,
               borderRadius: "2px 0 0 2px",
               boxShadow: "inset -12px 0 24px rgba(0,0,0,0.12)",
@@ -359,7 +359,7 @@ const BookMockup = ({
             style={{
               width: "50%",
               position: "relative",
-              minHeight: 280,
+              minHeight: 220,
               maxHeight: 480,
               transformStyle: "preserve-3d",
             }}
