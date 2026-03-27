@@ -236,7 +236,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right column — book */}
-        <div className="flex items-center justify-center">
+        <div className="hidden lg:flex items-center justify-center">
           <BookMockup bookRef={bookRef} lightPos={lightPos} />
         </div>
       </div>
@@ -293,7 +293,7 @@ const BookMockup = ({
   return (
     <div
       ref={bookRef}
-      className="relative flex flex-col items-center w-full max-w-[160px] sm:max-w-[220px] lg:max-w-[580px] mx-auto"
+      className="relative flex flex-col items-center w-full mx-auto"
     >
       {/* Book object */}
       <div
@@ -313,7 +313,7 @@ const BookMockup = ({
             flexDirection: "row",
             width: "100%",
             aspectRatio: "2.15 / 1",
-            maxHeight: 480,
+            maxHeight: 560,
           }}
         >
           {/* Cover page (left) */}
