@@ -153,7 +153,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right column — book spread (desktop) */}
-        <div className="hidden lg:flex w-[58%] items-center justify-center relative">
+        <div className="hidden lg:flex w-[55%] items-center justify-center relative">
           <BookSpread large />
         </div>
       </div>
