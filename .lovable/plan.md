@@ -1,28 +1,19 @@
 
 
-## Bring Back the Definition Quote Block
+## Diagnosis: App Not Rendering
 
-The screenshot shows a dark banner between the hero and the social proof bar containing:
-- Gold label: "THE DEFINITION THAT CHANGES EVERYTHING"
-- A gold horizontal rule above the quote
-- Italic serif quote: "GTM for professional services is not a plan for entering a new market. It is a system for activating the one you already own."
-- Dark background matching the hero section tone
+The screenshot shows the Lovable placeholder ("Your app will live here"), which appears when the app fails to build or hasn't loaded yet. After reviewing all relevant files:
 
-This block was likely removed during recent hero edits. It needs to be re-added.
+- `src/pages/Index.tsx` — correct imports and JSX
+- `src/components/DefinitionBanner.tsx` — valid component, properly exported
+- `src/components/HeroSection.tsx` — no syntax errors found
+- `src/App.tsx` — correct routing
 
-### Implementation
+**No code errors found.** The DefinitionBanner component and Index page are both syntactically correct. This appears to be a transient build/reload issue after the last file creation.
 
-**Add a new `DefinitionBanner` section** either as a separate component or inline in `Index.tsx`, placed between `<HeroSection />` and `<SocialProofBar />`.
+### Fix
 
-Structure:
-- Full-width section with dark background (`#2a2520` or similar warm charcoal)
-- Subtle gold top border line
-- Gold uppercase mono label: "THE DEFINITION THAT CHANGES EVERYTHING"
-- Large italic Playfair Display quote text in warm cream/gold
-- Generous vertical padding (py-16 to py-20)
-- Max-width container centered, text centered
+No code changes needed. The implementation should trigger a rebuild automatically. If the preview still shows the placeholder, the fix is simply to ensure the dev server picks up the newly created `DefinitionBanner.tsx` file — which happens on the next edit cycle.
 
-### Files
-1. **`src/components/DefinitionBanner.tsx`** — new component with the quote block
-2. **`src/pages/Index.tsx`** — import and place between HeroSection and SocialProofBar
+If it persists, a minimal no-op edit (e.g., adding a trailing newline to `src/App.tsx`) would force a rebuild.
 
