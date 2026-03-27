@@ -193,8 +193,8 @@ const HeroSection = () => {
 
 /* ── Book Spread: cover + chapter page side by side ── */
 const BookSpread = ({ large }: { large?: boolean }) => {
-  const bookW = large ? 260 : 180;
-  const pageW = large ? 280 : 200;
+  const bookW = large ? 220 : 180;
+  const pageW = large ? 240 : 200;
   const glowSize = large ? 600 : 400;
 
   return (
