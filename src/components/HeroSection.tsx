@@ -239,7 +239,7 @@ const BookSpread = ({ large }: { large?: boolean }) => {
         <div
           style={{
             width: pageW,
-            maxWidth: large ? "32vw" : "50vw",
+            maxWidth: large ? "26vw" : "50vw",
             aspectRatio: "2/3",
             background: "#f5f0e2",
             padding: large ? "32px 28px 40px" : "24px 20px 32px",
