@@ -102,18 +102,144 @@ const HeroSection = () => {
             Services.
           </h1>
 
-          {/* Subhead */}
-          <p
-            className="font-sans mt-7"
+          {/* Book page preview */}
+          <div
+            className="mt-7 relative"
             style={{
-              fontSize: 17,
-              color: "rgba(255,255,255,0.50)",
-              lineHeight: 1.75,
-              maxWidth: 460,
+              maxWidth: 420,
+              transform: "rotate(-1.5deg)",
             }}
           >
-            GTM has one universally accepted definition: a plan for bringing a product to a market that does not know you yet. That definition has never applied to professional services firms. This book fixes that. Adam Fridman and Richard Ashbaugh are conducting 50 Discovery Sessions with managing partners as the research foundation. The session is free. The insight is yours to keep.
-          </p>
+            <div
+              style={{
+                background: "#f5f0e2",
+                padding: "40px 36px 48px",
+                boxShadow:
+                  "0 2px 40px rgba(0,0,0,0.18), 2px 4px 16px rgba(0,0,0,0.10), -4px 0 12px rgba(0,0,0,0.06)",
+                borderRadius: 3,
+                position: "relative",
+                minHeight: 340,
+              }}
+            >
+              {/* Chapter eyebrow */}
+              <div
+                className="flex items-center gap-3"
+                style={{
+                  fontFamily: "'EB Garamond', Georgia, serif",
+                  fontSize: 9.5,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase" as const,
+                  color: "#9a8a6a",
+                  marginBottom: 28,
+                }}
+              >
+                Chapter One
+                <span className="flex-1 block" style={{ height: 0.5, background: "#c8b88a" }} />
+              </div>
+
+              {/* Headline */}
+              <div
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: 11.5,
+                  fontStyle: "italic",
+                  color: "#7a6a4a",
+                  letterSpacing: "0.04em",
+                  marginBottom: 6,
+                }}
+              >
+                The founding problem
+              </div>
+
+              {/* Title */}
+              <h3
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: 24,
+                  fontWeight: 700,
+                  lineHeight: 1.15,
+                  color: "#1e1a10",
+                  margin: "0 0 22px",
+                }}
+              >
+                The Wrong Map
+              </h3>
+
+              {/* Body */}
+              <div
+                style={{
+                  fontFamily: "'EB Garamond', Georgia, serif",
+                  fontSize: 13,
+                  lineHeight: 1.85,
+                  color: "#3a3020",
+                  textAlign: "justify" as const,
+                  marginBottom: 24,
+                }}
+              >
+                <p style={{ margin: "0 0 12px" }}>
+                  Every GTM framework built in the last forty years shares a single founding assumption. It was never stated explicitly because it never had to be.
+                </p>
+                <p style={{ margin: "0 0 12px" }}>
+                  The assumption is this: your buyer does not know you yet. Your job is to find them, interrupt them, and earn their attention from zero.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Professional services firms borrowed these playbooks and spent years wondering why they produced so little. The answer was never execution. The frameworks were solving a different problem entirely.
+                </p>
+              </div>
+
+              {/* Pull quote */}
+              <blockquote
+                style={{
+                  borderTop: "1.5px solid #1e1a10",
+                  borderBottom: "1.5px solid #1e1a10",
+                  padding: "16px 0 14px",
+                  margin: 0,
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "'EB Garamond', serif",
+                    fontSize: 8.5,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase" as const,
+                    color: "#9a8a6a",
+                    marginBottom: 10,
+                  }}
+                >
+                  The definition that changes everything
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 16,
+                    fontStyle: "italic",
+                    lineHeight: 1.5,
+                    color: "#1e1a10",
+                    margin: 0,
+                  }}
+                >
+                  "You were not bad at GTM. You were using the wrong map."
+                </p>
+              </blockquote>
+
+              {/* Page number */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 18,
+                  left: 0,
+                  right: 0,
+                  textAlign: "center",
+                  fontFamily: "'EB Garamond', serif",
+                  fontSize: 10,
+                  color: "#b0a080",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                12
+              </div>
+            </div>
+          </div>
 
           {/* Urgency strip */}
           <div className="flex items-center gap-2.5 mt-6">
