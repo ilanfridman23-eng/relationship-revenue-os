@@ -7,11 +7,11 @@ const DefinitionBanner = () => {
       <div className="max-w-[800px] mx-auto text-center">
         <div
           className="mx-auto mb-6 scroll-reveal"
-          style={{ width: 60, height: 1, background: "var(--gold)" }}
+          style={{ width: 72, height: 1, background: "var(--gold)" }}
         />
         <p
           className="font-mono uppercase tracking-widest mb-8 scroll-reveal"
-          style={{ fontSize: 10, color: "var(--gold)", letterSpacing: "0.2em" }}
+          style={{ fontSize: 11, color: "var(--gold)", letterSpacing: "0.2em" }}
         >
           THE DEFINITION THAT CHANGES EVERYTHING
         </p>
