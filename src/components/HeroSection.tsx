@@ -119,16 +119,8 @@ const HeroSection = () => {
 
       {/* Two-column grid */}
       <div
-        className="relative mx-auto"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 48,
-          alignItems: "center",
-          padding: "64px 80px",
-          minHeight: "100vh",
-          maxWidth: 1400,
-        }}
+        className="relative mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center px-5 py-8 md:px-10 md:py-12 lg:px-20 lg:py-16 lg:min-h-screen"
+        style={{ maxWidth: 1400 }}
       >
         {/* Left column */}
         <div className="relative z-10">
@@ -144,7 +136,7 @@ const HeroSection = () => {
           <h1
             className="font-display font-black text-white mt-7"
             style={{
-              fontSize: "clamp(44px, 5.5vw, 76px)",
+              fontSize: "clamp(32px, 5.5vw, 76px)",
               lineHeight: 0.95,
               letterSpacing: "-0.035em",
             }}
@@ -211,7 +203,7 @@ const HeroSection = () => {
           </div>
 
           {/* Stat strip */}
-          <div ref={statRef} className="flex gap-0 mt-14">
+          <div ref={statRef} className="flex flex-wrap gap-y-6 gap-0 mt-10 lg:mt-14">
             {[
               { num: stat1, label: "of PS firm CRM contacts are dormant" },
               { num: stat2, label: "of revenue from existing relationships" },
@@ -228,7 +220,7 @@ const HeroSection = () => {
               >
                 <span
                   className="font-display font-black text-gold block"
-                  style={{ fontSize: "clamp(28px, 3vw, 42px)", lineHeight: 1 }}
+                  style={{ fontSize: "clamp(24px, 3vw, 42px)", lineHeight: 1 }}
                 >
                   {stat.num}%
                 </span>
@@ -256,7 +248,7 @@ const HeroSection = () => {
           background: "rgba(184,147,58,0.06)",
           borderTop: "2px solid rgba(184,147,58,0.3)",
           borderBottom: "2px solid rgba(184,147,58,0.3)",
-          padding: "36px 48px",
+          padding: "24px 20px",
           maxWidth: 800,
           marginBottom: 0,
         }}
@@ -301,8 +293,7 @@ const BookMockup = ({
   return (
     <div
       ref={bookRef}
-      className="relative flex flex-col items-center"
-      style={{ width: "100%", maxWidth: 540, margin: "0 auto" }}
+      className="relative flex flex-col items-center w-full max-w-[360px] lg:max-w-[540px] mx-auto"
     >
       {/* Book object */}
       <div
@@ -322,7 +313,7 @@ const BookMockup = ({
             style={{
               width: "50%",
               background: "#F5EDD8",
-              minHeight: 420,
+              minHeight: 280,
               maxHeight: 480,
               borderRadius: "2px 0 0 2px",
               boxShadow: "inset -12px 0 24px rgba(0,0,0,0.12)",
@@ -368,7 +359,7 @@ const BookMockup = ({
             style={{
               width: "50%",
               position: "relative",
-              minHeight: 420,
+              minHeight: 280,
               maxHeight: 480,
               transformStyle: "preserve-3d",
             }}
