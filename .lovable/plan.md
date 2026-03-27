@@ -1,39 +1,44 @@
 
 
-## Add Five Interaction Layers to Hero Section
+## Rebuild Book Mockup as Unified Physical Object
 
-Behavior-only changes to `src/components/HeroSection.tsx`. No layout, copy, spacing, color, or structural modifications.
+**Problem**: The book is two separate floating cards with individual shadows and a visible gray container behind the cover. No spine, no depth, no physicality.
 
-### Layer 1: Book Page Turn on Hover
-- Add `perspective: 1200px` to the spread container (line 212 div).
-- Add `useState` for hover state on the right page (chapter page div, line 232).
-- On `onMouseEnter`/`onMouseLeave`, toggle a CSS `transform: rotateY(-25deg)` with `transformOrigin: "left center"` and `transition: transform 400ms ease-in-out` / 350ms on leave.
-- The back face gets `backfaceVisibility: hidden` and a warmer white (`#faf6ef`).
-- Behind the chapter page, render a second div (same dimensions) with darker cream (`#ede5d5`), centered Cormorant Garamond italic quote in muted gold (`rgba(184,147,58,0.5)`): "The market you need to win is already in your CRM."
+### Changes in `src/components/HeroSection.tsx` — BookSpread component only
 
-### Layer 2: Ambient Light on Cover
-- Add a `useRef` for the hero `<section>` and a `useState` for cursor position.
-- On `onMouseMove` on the section, compute cursor position relative to the book cover image.
-- Render an absolutely positioned div over the cover image: `pointerEvents: none`, `mixBlendMode: "overlay"`, `opacity: 0.18`, `zIndex: 2`, with `background: radial-gradient(circle at ${x}% ${y}%, rgba(255,210,120,0.6) 0%, transparent 55%)`.
+**1. Remove ambient glow div** (lines 308-315) — the gray/gold circle behind the book. Background should be the dark hero only.
 
-### Layer 3: Session Counter Pulse
-- Change the amber dot animation from `dotPulse 2s infinite` to a custom opacity animation: `1 → 0.3 → 1` over `2.4s infinite`.
-- On mount, apply a one-shot scale animation (`1 → 1.03 → 1`, 700ms ease-in-out) to the counter text span via `useEffect` + CSS class toggle. Add `willChange: "transform"` to that span.
+**2. Restructure the spread container** (line 318-321) into a unified book object:
+- Outer wrapper: `perspective: 1400px`
+- Inner book div: `transform: rotate(-1.5deg) rotateX(3deg)`, `transformStyle: preserve-3d`, unified drop shadow `0px 32px 80px rgba(0,0,0,0.55), 0px 8px 24px rgba(0,0,0,0.35)`. No gap between children.
+- Contains three children in a row: left page, spine, right page.
 
-### Layer 4: Book Entrance on Load
-- Add `useState` for mounted state, triggered by `useEffect` on mount.
-- The spread container starts at `opacity: 0, translateY(36px)` and transitions to `opacity: 1, translateY(0)` over 900ms with `cubic-bezier(0.22, 1, 0.36, 1)`.
-- The cover (left) animates immediately; the right page has a 90ms `transitionDelay`.
+**3. Add spine element** between the two pages:
+- 14px wide vertical div, full height
+- Background: `linear-gradient(to right, #1A0A00 0%, #3D1E08 40%, #1A0A00 100%)`
 
-### Layer 5: Stat Counter on Scroll
-- Replace static stat numbers with a custom hook using `IntersectionObserver` (threshold 0.4) + `requestAnimationFrame`.
-- Animate from 0 to final value over 1400ms with cubic ease-out deceleration.
-- `1.3%` always shows one decimal place (`toFixed(1)`). Others show integers.
-- Percent sign rendered immediately. Stagger: 0ms, 120ms, 240ms.
-- Use a `useRef` on the stat strip container for the observer target.
+**4. Add bottom edge strip** on the unified book div:
+- `::after` pseudo or a 6px tall div at the bottom, background `#1A0A00`, full width
 
-### Technical notes
-- All state/refs added to existing components via React hooks. Import `useState, useEffect, useRef, useCallback`.
-- Add `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap')` to `index.html` or use inline font-family with Georgia fallback.
-- Single file change: `src/components/HeroSection.tsx`.
+**5. Left page (cover) shadow changes**:
+- Remove individual `boxShadow` from the `<img>` (lines 337-339)
+- Add `boxShadow: "inset -20px 0 40px rgba(0,0,0,0.25)"` via an overlay div on the cover's right edge
+- Add a 4px left-edge strip: `linear-gradient(to left, #0D0600, transparent)` for book thickness
+
+**6. Right page shadow changes**:
+- Remove individual `boxShadow` from both the revealed interior page (lines 375-377) and the main chapter page (lines 407-409)
+- Add `boxShadow: "inset 20px 0 40px rgba(0,0,0,0.15)"` to the chapter page
+
+**7. Fix border-radius**: Left page gets rounded left corners only (`6px 0 0 6px`), right page gets rounded right corners only (`0 6px 6px 0`). No rounding where pages meet the spine.
+
+**8. Entrance animation** stays on the unified book wrapper instead of individual pages. The 90ms stagger is removed since it's one object now.
+
+### Not changed
+- All text content, typography, colors inside pages
+- Page turn hover behavior (Layer 1)
+- Ambient light overlay (Layer 2) 
+- Edition label below the book
+
+### Files
+- `src/components/HeroSection.tsx` — single file
 
