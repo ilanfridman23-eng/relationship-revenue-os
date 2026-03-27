@@ -20,6 +20,7 @@ const Index = () => {
       <StickyNav />
       <main>
         <HeroSection />
+        <DefinitionBanner />
         <SocialProofBar />
         <MissionSection />
         <EpisodeSection />
