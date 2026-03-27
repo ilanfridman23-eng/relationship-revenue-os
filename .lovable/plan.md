@@ -1,43 +1,26 @@
 
 
-## Rebuild Book Mockup as Unified Physical Object
+## Fix Book Mockup: Sizing, Transform, and Structure
 
-**Problem**: The book is two separate floating cards with individual shadows and a visible gray container behind the cover. No spine, no depth, no physicality.
+### Changes in `src/components/HeroSection.tsx`
 
-### Changes in `src/components/HeroSection.tsx` — BookSpread component only
+**1. Constrain book size & prevent overflow**
+- Add `overflow-hidden` and `max-w-full` to the right column container (line 244)
+- Add `maxWidth: 580` to the BookSpread root wrapper (line 306)
 
-**1. Remove ambient glow div** (lines 308-315) — the gray/gold circle behind the book. Background should be the dark hero only.
+**2. Flatten 3D transforms on static book**
+- Line 308: Remove `perspective: 1400` from the outer wrapper (keep it only needed for page-turn hover, move it to the right page's parent instead)
+- Line 315: Change `transform: "rotate(-1.5deg) rotateX(3deg)"` to `transform: "rotate(-1deg)"`
+- Remove `transformStyle: "preserve-3d"` from the inner book div (line 316) — keep it only on the right page area (line 381) where the page-turn needs it
+- Add `perspective: 1400` to the right page area div (line 378) so the hover page-turn still works
 
-**2. Restructure the spread container** (line 318-321) into a unified book object:
-- Outer wrapper: `perspective: 1400px`
-- Inner book div: `transform: rotate(-1.5deg) rotateX(3deg)`, `transformStyle: preserve-3d`, unified drop shadow `0px 32px 80px rgba(0,0,0,0.55), 0px 8px 24px rgba(0,0,0,0.35)`. No gap between children.
-- Contains three children in a row: left page, spine, right page.
+**3. Remove inner white rectangle on cover**
+- The cover image currently renders at `height: 100%, width: auto` which may show a white background behind it. Change the left page container (line 325) to have `overflow: hidden` and explicit width matching 50% of book width (via `calc(50% - 7px)` to account for half the 14px spine). Remove `width: auto` from the img and use `width: 100%` + `objectFit: cover` so it fills the entire left page area with no white gaps.
 
-**3. Add spine element** between the two pages:
-- 14px wide vertical div, full height
-- Background: `linear-gradient(to right, #1A0A00 0%, #3D1E08 40%, #1A0A00 100%)`
-
-**4. Add bottom edge strip** on the unified book div:
-- `::after` pseudo or a 6px tall div at the bottom, background `#1A0A00`, full width
-
-**5. Left page (cover) shadow changes**:
-- Remove individual `boxShadow` from the `<img>` (lines 337-339)
-- Add `boxShadow: "inset -20px 0 40px rgba(0,0,0,0.25)"` via an overlay div on the cover's right edge
-- Add a 4px left-edge strip: `linear-gradient(to left, #0D0600, transparent)` for book thickness
-
-**6. Right page shadow changes**:
-- Remove individual `boxShadow` from both the revealed interior page (lines 375-377) and the main chapter page (lines 407-409)
-- Add `boxShadow: "inset 20px 0 40px rgba(0,0,0,0.15)"` to the chapter page
-
-**7. Fix border-radius**: Left page gets rounded left corners only (`6px 0 0 6px`), right page gets rounded right corners only (`0 6px 6px 0`). No rounding where pages meet the spine.
-
-**8. Entrance animation** stays on the unified book wrapper instead of individual pages. The 90ms stagger is removed since it's one object now.
-
-### Not changed
-- All text content, typography, colors inside pages
-- Page turn hover behavior (Layer 1)
-- Ambient light overlay (Layer 2) 
-- Edition label below the book
+**4. Equal-width pages**
+- Left page (line 325): set `width: calc(50% - 7px)`, `flexShrink: 0`
+- Right page area (line 378-380): replace `width: h * 0.62` with `width: calc(50% - 7px)`, `flexShrink: 0`
+- Spine stays at 14px with `flexShrink: 0`
 
 ### Files
 - `src/components/HeroSection.tsx` — single file
