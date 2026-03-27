@@ -59,8 +59,7 @@ const BookSection = () => {
         {/* Book display */}
         <div
           className="relative mx-auto mt-12 mb-4 flex flex-col items-center"
-          onMouseEnter={() => setShowFramework(true)}
-          onMouseLeave={() => setShowFramework(false)}
+          
         >
           {/* Gold glow */}
           <div
