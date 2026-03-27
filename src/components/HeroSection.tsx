@@ -221,7 +221,7 @@ const HeroSection = () => {
               >
                 <span
                   className="font-display font-black text-gold block"
-                  style={{ fontSize: "clamp(28px, 3vw, 42px)", lineHeight: 1 }}
+                  style={{ fontSize: "clamp(24px, 3vw, 42px)", lineHeight: 1 }}
                 >
                   {stat.num}%
                 </span>
