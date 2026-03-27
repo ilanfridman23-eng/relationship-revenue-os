@@ -236,7 +236,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right column — book */}
-        <div className="flex items-center justify-center">
+        <div className="hidden lg:flex items-center justify-center">
           <BookMockup bookRef={bookRef} lightPos={lightPos} />
         </div>
       </div>
