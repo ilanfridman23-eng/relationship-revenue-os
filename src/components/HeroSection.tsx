@@ -252,8 +252,6 @@ const HeroSection = () => {
           maxWidth: 800,
           marginBottom: 0,
         }}
-        // Desktop padding override via className
-        className="relative z-10 text-center mx-6 md:mx-auto md:!px-12 md:!py-9"
       >
         <span
           className="font-mono uppercase block"
