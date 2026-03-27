@@ -1,6 +1,9 @@
+import { useState } from "react";
 import bookCover from "@/assets/book-cover.png";
+import FrameworkOverlay from "./FrameworkOverlay";
 
 const BookSection = () => {
+  const [showFramework, setShowFramework] = useState(false);
   const chapters = [
     {
       num: "01",
