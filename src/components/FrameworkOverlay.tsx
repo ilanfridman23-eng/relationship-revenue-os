@@ -17,13 +17,15 @@ const orbits = [
 const FrameworkOverlay = ({ visible }: { visible: boolean }) => {
   return (
     <div
-      className="absolute left-1/2 z-30 w-full pointer-events-none"
+      className="absolute left-1/2 z-30 w-full"
       style={{
         maxWidth: 720,
-        top: -20,
+        bottom: "100%",
+        marginBottom: 12,
         transform: "translateX(-50%)",
         opacity: visible ? 1 : 0,
         scale: visible ? "1" : "0.96",
+        pointerEvents: visible ? "auto" : "none",
         transition: "opacity 0.3s ease, scale 0.3s ease",
       }}
     >
