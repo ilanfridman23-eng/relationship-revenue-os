@@ -241,7 +241,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right column — book spread (desktop) */}
-        <div className="hidden lg:flex w-[55%] items-center justify-center relative overflow-hidden max-w-full">
+        <div className="hidden lg:flex lg:w-[560px] lg:max-w-[560px] lg:flex-shrink-0 items-center justify-center relative overflow-hidden">
           <BookSpread large bookRef={bookRef} lightPos={lightPos} />
         </div>
       </div>
