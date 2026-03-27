@@ -1,5 +1,6 @@
 import StickyNav from "@/components/StickyNav";
 import HeroSection from "@/components/HeroSection";
+import DefinitionBanner from "@/components/DefinitionBanner";
 import SocialProofBar from "@/components/SocialProofBar";
 import MissionSection from "@/components/MissionSection";
 import EpisodeSection from "@/components/EpisodeSection";
